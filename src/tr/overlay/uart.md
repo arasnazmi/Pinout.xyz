@@ -1,16 +1,19 @@
 <!--
 ---
-description: Raspberry Pi UART pinleri
+page_url: uart
+description: T3 Gemstone O1 UART-MAIN1 başlık pinleri ve isteğe bağlı UART yönlendirmeleri
 pin:
-  '8':
-    name: TXD / Transmit
-  '10':
-    name: RXD / Receive
+  '11':
+    name: UART-MAIN1 RTS
+  '36':
+    name: UART-MAIN1 CTS
 -->
-# UART - Universal Asenkron Verici/Alcı
+# UART
 
-### WiringPi'deki 2 UART pini Pin 15 ve 16'dır
+Physical Pin 8 gönderir, Physical Pin 10 alır. Linux'ta bu seri port `/dev/ttyS3` olarak görünür. Cihazınızın alma pinini Physical Pin 8'e, gönderme pinini Physical Pin 10'a bağlayın ve toprağı ortaklayın.
 
-UART Arduino, veya bootload edilmiş bir ATmega ile kolayca iletişim kurmanızı sağlayacak bir arayüzdür. Yalnız bu iletişimi kurarken dikkat etmeniz gereken bazı hususlar var. Raspberry Pi 3.3v iken Arduino 5v'tur. Bunları akımları eşitlemeden bağlarsanız cihazlarınızdan dumanlar tütmeye başlayabilir
+Physical Pin 11 ile Physical Pin 36, ihtiyaç duyan cihazlar için akış kontrolü (RTS ve CTS) ekler. Basit seri cihazların çoğu buna ihtiyaç duymaz; bu iki pini boş bırakabilirsiniz.
 
-Örneğin Arduino bootload edilmiş ATmega 328 devresini breadboard'a kurup bir akım regülatörü ile Raspberry Pi'nin 5v yolunu 3.3 v'a dönüştürebilirsiniz. Bu sayede 3.3v logic'ine sahip bir Arduino klonunuz olacak.
+> **Yalnızca 3,3 V:** Bu portu asla bir RS-232 portuna veya 5 V'luk bir seri dönüştürücüye bağlamayın; ikisi de kartı bozar. 3,3 V'luk bir USB-seri dönüştürücü ya da uygun bir RS-232 seviye dönüştürücü kullanın.
+
+Kartın üzerindeki üç pinli konnektör, açılış konsolu için kullanılan ayrı bir seri porttur. Bu pinlerle aynı şey değildir.

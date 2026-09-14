@@ -3,18 +3,17 @@
 name: 3v3 Power
 class: interface
 type: pinout
-description: Raspberry Pi 3v3 Power Pins
+description: T3 Gemstone O1 3.3 V header supply pins
+url: https://docs.t3gemstone.org/en/boards/o1/peripherals/introduction
 pincount: 2
 pin:
   '1':
   '17':
 -->
-# 3v3 Power
+# 3.3 V Power
 
-All Raspberry Pi models since the B+ can provide up to 500mA on the 3v3 pins, thanks to a switching regulator. In some cases it may be possible to draw more but, due to lack of documentation and testing on the actual limits, 500mA is given as a rule of thumb.
+Physical Pin 1 and Physical Pin 17 supply 3.3 V. This is also the voltage all the signal pins work at, so it is the right supply for sensors, small displays and other low-power add-ons.
 
-The 3v3 supply pin on the early Raspberry Pi had a maximum available current of only 50mA.
+The board makes this 3.3 V with its own small regulator, and shares it with the M.2 slot and the camera, display and USB connectors. So the current you can draw here depends on what else is plugged into the board.
 
-The 5v supply coupled with a 3v3 regulator is recommended for powering 3.3v projects.
-
-The Piversify blog has [an exploration of the 3v3 supply rail on the Raspberry Pi B+](https://raspberrypise.tumblr.com/post/144555785379/exploring-the-33v-power-rail)
+> **Do not feed power in:** These pins are an output, not an input. Putting your own 3.3 V into them pushes against the board's regulator and can damage it.
