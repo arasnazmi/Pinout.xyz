@@ -1,13 +1,19 @@
 <!--
 ---
-description: Raspberry Pi SPI pinleri
+page_url: spi
+description: T3 Gemstone O1 SPI-MCU0 başlık pinleri
+url: https://docs.t3gemstone.org/tr/boards/o1/peripherals/introduction
 -->
-# SPI - Serial Peripheral Interface
+# SPI
 
-### four-wire serial bus olarak da bilinen SPI, bir pin setinden birden fazla adresteki birden fazla uygun cihazı [papatya zinciri](https://tr.wikipedia.org/wiki/Papatya_zinciri) yapıp yönetmenizi sağlar.
+SPI beş pin kullanır: Physical Pin 19 cihazınıza veri gönderir, Physical Pin 21 cihazdan veri alır, Physical Pin 23 ise saat hattıdır. Physical Pin 24 ve Physical Pin 26, hangi cihazla konuşulduğunu seçen iki chip-select hattıdır. Bu bağlantılar Linux'ta `/dev/spidev0.0` ve `/dev/spidev0.2` olarak görünür.
 
-SPI portunuz ayrıca Gordon Henderson'un modifiye AVRDude'una Arduino skeçleri yükleyerek ATmega 328'ye "[bit banging](http://en.wikipedia.org/wiki/Bit_banging)" de yapabilirsiniz.
+Her birine kendi chip-select hattını verdiğiniz ve chip-select'i etkin olmayan cihaz sessiz kaldığı sürece aynı veri ve saat pinlerine birden fazla cihaz bağlayabilirsiniz.
 
-Raspberry Pi'nizin SPI port'unu ATmega'nıza bağlayın ve ATmega'yı Raspberry Pi'nin 3.3v gücüyle besleyip açın. SPI sürücüleri çalıştırmadığınızdan emin olduktan sonra "`avrdude -p m328p -c gpio`" komutu ile bağlantıyı kontrol edin.
+## Kartın kendi sensörleri de bu hatta
 
-ATmega'nız varsa her bir pin için ayrı ayrı tıklayarak nasıl bağlayabileceğinizi öğrenebilirsiniz.
+Kartın içindeki basınç sensörü ile hareket sensörü bu veri ve saat pinlerini sizinle paylaşır. Kendi chip-select hatları vardır ve bunlar başlığa çıkarılmamıştır; dolayısıyla cihazınız onlarla karışmaz.
+
+> **Dikkat edilecekler:** 3,3 V sinyal kullanın. Cihazınızın, chip-select'i etkin değilken veri giriş pinini sürmeyi bıraktığından emin olun; konuşmaya devam ederse kartın kendi sensör okumaları yanlış çıkar, tersi de geçerlidir.
+
+> **26 numaralı pinin ikinci bir görevi var:** Bu pin, ek bir seri portun alma hattı olarak da kullanılabilir. Onu etkinleştirirseniz tek chip-select hattınız Physical Pin 24 olur.
