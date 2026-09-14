@@ -3,21 +3,29 @@
 name: PCM
 class: interface
 type: pinout
-description: Raspberry Pi PCM pins
+description: T3 Gemstone O1 PCM/I2S-compatible header signals
+url: https://docs.t3gemstone.org/en/boards/o1/peripherals/introduction
 pin:
-  'bcm18':
+  '12':
     name: CLK
-  'bcm19':
+  '35':
     name: FS
-  'bcm20':
-    name: DIN
-  'bcm21':
-    name: DOUT
+  '38':
+    name: DATA0
+  '40':
+    name: DATA1
 -->
 # PCM - Pulse-code Modulation
 
-PCM (Pulse-code Modulation) is a digital representation of sampled analog. On the Raspberry Pi it's a form of digital audio output which can be understood by a DAC for high quality sound.
+Four pins carry digital audio, in the same positions a Raspberry Pi uses for I2S, so an audio HAT will line up physically:
 
-These are the pins you'll want for I2S (Inter-IC Sound), which is the signalling most audio HATs and DACs use and the name they usually give it.
+| Pin | What it carries |
+| --: | :-- |
+| 12 | bit clock |
+| 35 | frame sync |
+| 38 | audio data, the input on a Pi |
+| 40 | audio data, the output on a Pi |
 
-I2S is off by default. `dtparam=i2s=on` in /boot/firmware/config.txt enables it, though most audio HATs ship an overlay that does this as part of their own setup.
+There is one difference worth knowing. On a Pi, Physical Pin 38 is always the input and Physical Pin 40 always the output. Here either data pin can be set up as an input or an output in software, so which one is which depends on the audio configuration rather than on the wiring.
+
+> **Physical fit is not enough:** A Raspberry Pi audio HAT plugs in, but it will only work if the T3 Gemstone software has a driver for that HAT's audio chip and the signals are set up the right way round. Check the T3 Gemstone documentation before buying one for audio.
