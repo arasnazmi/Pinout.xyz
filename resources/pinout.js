@@ -1,3 +1,12 @@
+const themeToggle=document.querySelector('#theme-toggle')
+const storedTheme=(()=>{try{return window.localStorage.getItem('gemstone-theme')}catch(_){return null}})()
+const systemTheme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'
+const applyTheme=theme=>{document.documentElement.dataset.theme=theme
+themeToggle?.setAttribute('aria-pressed',theme==='dark')}
+applyTheme(storedTheme==='dark'||storedTheme==='light'?storedTheme:systemTheme)
+themeToggle?.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark'
+applyTheme(theme)
+try{window.localStorage.setItem('gemstone-theme',theme)}catch(_){}})
 const content=document.querySelector('main')
 const gpio=document.querySelector('#gpio')
 const view=document.querySelector('#pinout-view')
@@ -50,4 +59,4 @@ const mode=button.classList.contains('mirror')?'mirror':'rotate'
 const pressed=!gpio.classList.contains(mode)
 gpio.classList.toggle(mode,pressed)
 button.setAttribute('aria-pressed',pressed)
-if(legend){inlining??=inlineLegend()}})
+if(legend?.src.endsWith('.svg')){inlining??=inlineLegend()}})
