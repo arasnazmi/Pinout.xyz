@@ -5,14 +5,14 @@
 		<title>ArduPilot - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="ArduPilot tarafından kullanılan T3 Gemstone O1 başlık işlevleri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/ardupilot.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/ardupilot.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/ardupilot.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="ArduPilot - T3 Gemstone O1 Pinout">
@@ -177,22 +177,22 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="page_ardupilot"><h1>ArduPilot başlık bağlantıları</h1>
-<p>Bu bağlantılar, gerekli device tree overlay'leri etkinleştirildikten sonra resmi T3 Gemstone ArduPilot yapılandırmasının 40 pin başlığa atadığı işlevleri gösterir.</p>
+				<article class="page_ardupilot"><h1>ArduPilot GPIO Bağlantıları</h1>
+<p>Bu bölümde, gerekli Device Tree overlay'leri etkinleştirildiğinde T3 Gemstone'un resmi ArduPilot yapılandırması tarafından 40 pinli başlığa atanan işlevler gösterilmektedir.</p>
 <h2>Seyrüsefer ve kontrol</h2>
 <ul>
-<li><strong>GPS ve harici pusula:</strong> 7 (UART-MAIN6 RX), 11 (UART-MAIN6 TX), 3 (I2C-MCU0 SDA) ve 5 (I2C-MCU0 SCL) numaralı pinler.</li>
-<li><strong>RC girişi:</strong> 10 numaralı pin (UART-MAIN1 RX) SBUS kabul eder.</li>
+<li><strong>GPS ve harici pusula:</strong> 7 (UART-MAIN6 RX), 11 (UART-MAIN6 TX), 3 (I2C-MCU0 SDA) ve 5 (I2C-MCU0 SCL) numaralı pinler kullanılır.</li>
+<li><strong>RC girişi:</strong> 10 numaralı pin (UART-MAIN1 RX) SBUS sinyalini destekler.</li>
 <li><strong>RC çıkışları:</strong> 29, 8, 31, 33, 32, 36 ve 12 numaralı pinler sırasıyla RCOut 1–7 çıkışlarını sağlar.</li>
-<li><strong>Telemetri:</strong> 18 (UART-WKUP0 TX) ve 26 (UART-WKUP0 RX) numaralı pinler.</li>
+<li><strong>Telemetri:</strong> 18 (UART-WKUP0 TX) ve 26 (UART-WKUP0 RX) numaralı pinler kullanılır.</li>
 </ul>
 <h2>Atanmış diğer pinler</h2>
-<p>19, 21, 23 ve 24 numaralı pinler SPI-MCU0 arayüzünü oluşturur. 27 ve 28 numaralı pinler I2C-WKUP0 için ayrılmıştır; 37 numaralı pin ise harici buzzer'a atanmıştır.</p>
+<p>19, 21, 23 ve 24 numaralı pinler SPI-MCU0 arayüzünü oluşturur. 27 ve 28 numaralı pinler I2C-WKUP0 için ayrılmıştır; 37 numaralı pin ise harici buzzer bağlantısı için atanmıştır.</p>
 <blockquote>
-<p><strong>SBUS uyarısı:</strong> SBUS terslenmiş seri sinyal kullanır. Alıcı ile 10 numaralı pin arasına harici bir sinyal tersleyici bağlanmalıdır; standart SBUS çıkışını doğrudan bağlamayın.</p>
-<p><strong>Güç ve lojik uyarısı:</strong> RCOut pinleri yalnızca 3,3 V PWM lojik sinyali taşır; servoya güç sağlamaz. Servo ve diğer yükleri ortak topraklı, uygun kapasiteli harici kaynaktan besleyin; gerektiğinde sürücü veya seviye dönüştürücü kullanın. GPS ve telemetri sinyal seviyelerinin bağlantıdan önce 3,3 V olduğunu doğrulayın.</p>
+<p><strong>SBUS uyarısı:</strong> SBUS, terslenmiş seri sinyal kullanır. Alıcı ile 10 numaralı pin arasına harici bir sinyal tersleyici bağlayın. Standart SBUS çıkışını doğrudan 10 numaralı pine bağlamayın.</p>
+<p><strong>Güç ve lojik uyarısı:</strong> RCOut pinleri yalnızca 3,3 V lojik seviyesinde PWM sinyali sağlar ve servolar için güç çıkışı sağlamaz. Servo ve diğer harici yükleri, kart ile ortak toprak bağlantısına sahip ve yeterli akım kapasitesine sahip harici bir güç kaynağından besleyin. Gerektiğinde uygun bir sürücü devresi veya lojik seviye dönüştürücü kullanın. GPS ve telemetri cihazlarını bağlamadan önce sinyal seviyelerinin 3,3 V lojik seviyesine uygun olduğunu doğrulayın.</p>
 </blockquote>
-<p>Çevre birimlerini bağlamadan önce resmi ArduPilot kılavuzundaki tüm overlay'leri etkinleştirin. Kılavuzda Linux aygıt yolları, servis kurulumu ve QGroundControl bağlantısı da açıklanır.</p>
+<p>Çevre birimlerini bağlamadan önce resmi T3 Gemstone dokümantasyonunda belirtilen gerekli Device Tree overlay'lerini etkinleştirin. İlgili kılavuzda Linux aygıt yolları, servis yapılandırması ve QGroundControl bağlantısına ilişkin kurulum adımları da açıklanmaktadır.</p>
 <div class="details"><h2>Ayrıntılar</h2><ul>
 <li>21 GPIO pini kullanır</li>
 <li><a href="https://docs.t3gemstone.org/tr/projects/ardupilot">Daha fazla bilgi</a></li>
@@ -207,7 +207,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

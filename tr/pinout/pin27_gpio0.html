@@ -5,14 +5,14 @@
 		<title>GPIO 0 - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 için etkileşimli GPIO ve genişleme başlığı referansı" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin27_gpio0.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pin27_gpio0.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin27_gpio0.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		
 	</head>
 	<body class="pin">
@@ -171,7 +171,7 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="pin27_gpio0"><h1>GPIO 0</h1><div class="pin-facts"><div><strong>Başlık</strong><span>Fiziksel/başlık pini 27</span></div><div><strong>GPIO numaralandırması</strong><span>Uyumluluk GPIO 0</span></div><div><strong>Varsayılan sinyal</strong><span>I2C-WKUP0 SDA</span></div><div><strong>Elektriksel özellik</strong><span>3,3 V lojik - 5 V toleranslı değildir</span></div></div><div class="pin-description"><p>Bu, ikinci bir I2C veri yolunun iki pininden biridir. Hat ilki gibi çalışır ama paylaşımlıdır: kartın gücünü yöneten çip, gerçek zaman saati ve küçük bir bellek çipi bu hatta zaten bağlıdır.</p><div class="notice notice-warning"><strong>Uyarı</strong><p>Buraya bir cihaz ekleyebilirsiniz; ancak i2cdetect ile hangi adreslerin dolu olduğunu kontrol edip çakışmayan bir adres seçin ve mevcut cihazlara dokunmayın. 3 ve 5 numaralı pinlerden daha dikkatli olun: güç yönetim çipi bu hatta olduğu için bir kısa devre ya da kilitlenen bir hat kartın tamamını durdurur. Günlük eklentiler için 3 ve 5 numaralı pinler daha kolay seçimdir.</p></div><a class="learn-more" href="/tr/pinout/i2c.html">İlgili arayüz kılavuzunu aç &rarr;</a></div></article>
+				<article class="pin27_gpio0"><h1>GPIO 0</h1><div class="pin-facts"><div><strong>Başlık</strong><span>Fiziksel Pin: 27</span></div><div><strong>GPIO numaralandırması</strong><span>0</span></div><div><strong>Varsayılan sinyal</strong><span>I2C-WKUP0 SDA</span></div><div><strong>Elektriksel özellik</strong><span>3,3 V lojik</span></div></div><div class="pin-description"><p>Bu pin, ikinci I²C veri yoluna ait iki hattan biridir. Arayüz, birinci I²C veri yolu ile aynı şekilde çalışır; ancak bu veri yolu kart üzerindeki diğer bileşenlerle paylaşılmaktadır. Güç yönetim entegresi (PMIC), gerçek zamanlı saat (RTC) ve bir bellek entegresi (EEPROM) bu hatta dahili olarak bağlıdır. Harici cihaz bağlarken mevcut cihazların I²C adreslerini ve veri yolu üzerindeki olası adres çakışmalarını göz önünde bulundurun.</p><div class="notice notice-warning"><strong>Uyarı</strong><p>Bu I²C hattına harici bir cihaz bağlanabilir. Cihazı bağlamadan önce `i2cdetect` komutunu kullanarak veri yolundaki mevcut I²C adreslerini kontrol edin ve çakışmaya neden olmayacak bir adres seçin. Mevcut cihazların bağlantılarına veya yapılandırmalarına müdahale etmeyin. Pin 3 ve 5 e kıyasla bu hat üzerinde daha dikkatli çalışılmalıdır. Güç yönetim entegresinin (PMIC) aynı veri yoluna bağlı olması nedeniyle oluşabilecek bir kısa devre veya hattın kilitlenmesi, kart üzerindeki güç yönetimini etkileyerek sistemin tamamının çalışmasını durdurabilir. Genel amaçlı harici cihaz bağlantıları için pin 3 ve 5 te bulunan I²C veri yolunun kullanılması önerilir.</p></div><a class="learn-more" href="/tr/pinout/i2c.html">İlgili arayüz kılavuzunu aç &rarr;</a></div></article>
 			</section>
 
 		</main>
@@ -182,7 +182,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

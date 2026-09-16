@@ -5,14 +5,14 @@
 		<title>5 V Güç - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 5 V başlık besleme pinleri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/5v_power.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/5v_power.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/5v_power.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="5 V Güç - T3 Gemstone O1 Pinout">
@@ -178,10 +178,10 @@
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_5_v_guc"><h1>5 V Güç</h1>
-<p><span class="pin-hover" data-pin="2">Physical Pin 2</span> ve <span class="pin-hover" data-pin="4">Physical Pin 4</span>, 3,3 V'tan fazlasına ihtiyaç duyan eklentiler için 5 V verir. Sinyal pinlerinin hala yalnızca 3,3 V olduğunu unutmayın: bir kartı 5 V ile beslemek, bir GPIO pinine 5 V geri gönderebileceğiniz anlamına gelmez.</p>
-<p>Bu 5 V, taktığınız kaynaktan doğrudan gelmez; karttaki bir regülatörden üretilir ve kart bu hattı kapatabilir.</p>
+<p><span class="pin-hover" data-pin="2">Physical Pin 2</span> ve <span class="pin-hover" data-pin="4">Physical Pin 4</span>, 3,3 V'tan daha yüksek besleme gerilimine ihtiyaç duyan çevre birimleri için 5 V besleme sağlar. Ancak sinyal pinleri yalnızca 3,3 V lojik seviyesini destekler. Bir çevre biriminin 5 V ile beslenebilmesi, bu cihazın GPIO pinlerine 5 V lojik sinyal uygulayabileceği anlamına gelmez.</p>
+<p>Bu pinlerdeki 5 V besleme, harici güç kaynağından doğrudan sağlanmaz; kart üzerindeki güç regülatörü tarafından üretilir. Güç yönetimi yapılandırmasına bağlı olarak bu besleme hattı devre dışı bırakılabilir.</p>
 <blockquote>
-<p><strong>Buradan güç vermeyin:</strong> Bu pinler çıkıştır. Buraya 5 V uygulamak kartın regülatörüne karşı çalışır ve kartın kendi güç girişindeki korumayı atlar; bir şeyleri bozmanın kolay yolu budur.</p>
+<p><strong>Buradan güç vermeyin:</strong> <span class="pin-hover" data-pin="2">Physical Pin 2</span> ve <span class="pin-hover" data-pin="4">Physical Pin 4</span> numaralı pinler 5 V çıkışıdır. Bu pinlere harici 5 V uygulanması, kart üzerindeki güç regülatörüyle çakışmaya ve güç girişindeki koruma devrelerinin devre dışı kalmasına neden olabilir. Bu nedenle kartı bu pinler üzerinden beslemeyin.</p>
 </blockquote>
 <div class="details"><h2>Ayrıntılar</h2><ul>
 <li><a href="https://docs.t3gemstone.org/tr/boards/o1/peripherals/introduction">Daha fazla bilgi</a></li>
@@ -196,7 +196,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

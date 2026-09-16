@@ -5,14 +5,14 @@
 		<title>GPIO 7 (SPI chip-select 2) - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 için etkileşimli GPIO ve genişleme başlığı referansı" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin26_gpio7.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pin26_gpio7.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin26_gpio7.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		
 	</head>
 	<body class="pin">
@@ -171,7 +171,7 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="pin26_gpio7"><h1>GPIO 7 (SPI chip-select 2)</h1><div class="pin-facts"><div><strong>Başlık</strong><span>Fiziksel/başlık pini 26</span></div><div><strong>GPIO numaralandırması</strong><span>Uyumluluk GPIO 7</span></div><div><strong>Varsayılan sinyal</strong><span>SPI-MCU0 CS2</span></div><div><strong>Elektriksel özellik</strong><span>3,3 V lojik - 5 V toleranslı değildir</span></div></div><div class="pin-description"><p>Bu, beş SPI pininden biridir: 19 veri gönderir, 21 veri alır, 23 saat hattıdır, 24 ve 26 ise chip-select hatlarıdır. İlgili overlay etkinleştirildiğinde bunlar Linux'ta /dev/spidev0.0 ve /dev/spidev0.2 olarak görünür.</p><div class="notice notice-warning"><strong>Uyarı</strong><p>Kartın kendi basınç ve hareket sensörleri veri ve saat pinlerini sizinle paylaşır. Kendi chip-select hatları olduğu için cihazınız onlarla karışmaz; ancak cihazınız chip-select'i etkin değilken veri giriş pinini sürmeyi bırakmalıdır, yoksa sensör okumaları yanlış çıkar. 3,3 V sinyal kullanın.</p></div><a class="learn-more" href="/tr/pinout/spi.html">İlgili arayüz kılavuzunu aç &rarr;</a></div></article>
+				<article class="pin26_gpio7"><h1>GPIO 7 (SPI chip-select 2)</h1><div class="pin-facts"><div><strong>Başlık</strong><span>Fiziksel Pin: 26</span></div><div><strong>GPIO numaralandırması</strong><span>7</span></div><div><strong>Varsayılan sinyal</strong><span>SPI-MCU0 CS2</span></div><div><strong>Elektriksel özellik</strong><span>3,3 V lojik</span></div></div><div class="pin-description"><p>Bu pin, SPI arayüzüne ait beş pindenden biridir. Pin 19 veri gönderimi (MOSI), pin 21 veri alımı (MISO), pin 23 saat sinyali (SCLK), pin 24 ve pin 26 ise yonga seçme (CS) hatları olarak kullanılır. İlgili Device Tree overlayi etkinleştirildiğinde SPI arayüzleri Linux üzerinde `/dev/spidev0.0` ve `/dev/spidev0.2` aygıt dosyaları olarak görünür.</p><div class="notice notice-warning"><strong>Uyarı</strong><p>Kart üzerindeki barometre ve IMU sensörleri, veri ve saat hatlarını bu SPI arayüzüyle paylaşır. Sensörlerin ayrı chip-select hatları bulunduğundan cihazınızla doğrudan bir çakışma oluşmaz. Ancak cihazınızın chip-select hattı etkin değilken veri hattını sürmemesi gerekir; aksi durumda sensör iletişimi etkilenebilir. Yalnızca 3,3 V lojik seviyesini destekleyen cihazlar kullanın.</p></div><a class="learn-more" href="/tr/pinout/spi.html">İlgili arayüz kılavuzunu aç &rarr;</a></div></article>
 			</section>
 
 		</main>
@@ -182,7 +182,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

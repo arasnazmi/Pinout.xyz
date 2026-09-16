@@ -5,14 +5,14 @@
 		<title>SPI - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 SPI-MCU0 başlık pinleri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/spi.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/spi.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/spi.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="SPI - T3 Gemstone O1 Pinout">
@@ -178,13 +178,13 @@
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_spi"><h1>SPI</h1>
-<p>SPI beş pin kullanır: <span class="pin-hover" data-pin="19">Physical Pin 19</span> cihazınıza veri gönderir, <span class="pin-hover" data-pin="21">Physical Pin 21</span> cihazdan veri alır, <span class="pin-hover" data-pin="23">Physical Pin 23</span> ise saat hattıdır. <span class="pin-hover" data-pin="24">Physical Pin 24</span> ve <span class="pin-hover" data-pin="26">Physical Pin 26</span>, hangi cihazla konuşulduğunu seçen iki chip-select hattıdır. Bu bağlantılar Linux'ta <code>/dev/spidev0.0</code> ve <code>/dev/spidev0.2</code> olarak görünür.</p>
-<p>Her birine kendi chip-select hattını verdiğiniz ve chip-select'i etkin olmayan cihaz sessiz kaldığı sürece aynı veri ve saat pinlerine birden fazla cihaz bağlayabilirsiniz.</p>
-<h2>Kartın kendi sensörleri de bu hatta</h2>
-<p>Kartın içindeki basınç sensörü ile hareket sensörü bu veri ve saat pinlerini sizinle paylaşır. Kendi chip-select hatları vardır ve bunlar başlığa çıkarılmamıştır; dolayısıyla cihazınız onlarla karışmaz.</p>
+<p>SPI arayüzü beş pin kullanır. <span class="pin-hover" data-pin="19">Physical Pin 19</span> veri gönderimi (MOSI), <span class="pin-hover" data-pin="21">Physical Pin 21</span> veri alımı (MISO), <span class="pin-hover" data-pin="23">Physical Pin 23</span> ise saat (SCLK) hattıdır. <span class="pin-hover" data-pin="24">Physical Pin 24</span> ve <span class="pin-hover" data-pin="26">Physical Pin 26</span>, bağlı cihazlardan hangisinin etkin olduğunu belirleyen chip-select (CS) hatlarıdır. İlgili Device Tree overlay'i etkinleştirildiğinde bu arayüzler Linux üzerinde <code>/dev/spidev0.0</code> ve <code>/dev/spidev0.2</code> aygıt dosyaları olarak görünür.</p>
+<p>Her cihaza ayrı bir chip-select hattı atanması ve chip-select hattı etkin olmayan cihazların SPI veri hattını sürmemesi koşuluyla, aynı MOSI, MISO ve SCLK hatları birden fazla cihaz tarafından paylaşılabilir.</p>
+<h2>Kartın kendi sensörleri de bu hattı kullanır</h2>
+<p>Kart üzerindeki barometre ve IMU sensörleri, SPI veri ve saat hatlarını harici cihazlarla paylaşır. Sensörlerin kendilerine ait chip-select (CS) hatları bulunur ve bu hatlar 40 pinli başlığa çıkarılmamıştır. Bu nedenle, uygun şekilde yapılandırılmış harici cihazların SPI iletişimi sensörlerin chip-select hatlarıyla çakışmaz.</p>
 <blockquote>
-<p><strong>Dikkat edilecekler:</strong> 3,3 V sinyal kullanın. Cihazınızın, chip-select'i etkin değilken veri giriş pinini sürmeyi bıraktığından emin olun; konuşmaya devam ederse kartın kendi sensör okumaları yanlış çıkar, tersi de geçerlidir.</p>
-<p><strong>26 numaralı pinin ikinci bir görevi var:</strong> Bu pin, ek bir seri portun alma hattı olarak da kullanılabilir. Onu etkinleştirirseniz tek chip-select hattınız <span class="pin-hover" data-pin="24">Physical Pin 24</span> olur.</p>
+<p><strong>Dikkat</strong> Yalnızca 3,3 V lojik seviyesini destekleyen cihazlar kullanın. Harici cihazın chip-select (CS) hattı etkin değilken SPI veri hatlarını sürmediğinden emin olun. CS hattı etkin olmayan bir cihazın veri hattını sürmesi, kart üzerindeki sensörlerin SPI iletişimini etkileyerek hatalı sensör okumalarına neden olabilir. Aynı şekilde, kart üzerindeki sensörlerin veri hattını sürmesi de harici cihazın iletişimini etkileyebilir.</p>
+<p><strong><span class="pin-hover" data-pin="26">Physical Pin 26</span>'nın ikinci işlevi:</strong> <span class="pin-hover" data-pin="26">Physical Pin 26</span>, ek bir seri portun alım (RX) hattı olarak da kullanılabilir. Bu işlev etkinleştirildiğinde SPI arayüzünde yalnızca <span class="pin-hover" data-pin="24">Physical Pin 24</span> chip-select (CS) hattı olarak kullanılabilir.</p>
 </blockquote>
 <div class="details"><h2>Ayrıntılar</h2><ul>
 <li><a href="https://docs.t3gemstone.org/tr/boards/o1/peripherals/introduction">Daha fazla bilgi</a></li>
@@ -199,7 +199,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

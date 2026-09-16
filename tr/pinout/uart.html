@@ -5,14 +5,14 @@
 		<title>UART - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 UART-MAIN1 başlık pinleri ve isteğe bağlı UART yönlendirmeleri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/uart.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/uart.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/uart.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="UART - T3 Gemstone O1 Pinout">
@@ -178,12 +178,12 @@
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_uart"><h1>UART</h1>
-<p><span class="pin-hover" data-pin="8">Physical Pin 8</span> gönderir, <span class="pin-hover" data-pin="10">Physical Pin 10</span> alır. Linux'ta bu seri port <code>/dev/ttyS3</code> olarak görünür. Cihazınızın alma pinini <span class="pin-hover" data-pin="8">Physical Pin 8</span>'e, gönderme pinini <span class="pin-hover" data-pin="10">Physical Pin 10</span>'a bağlayın ve toprağı ortaklayın.</p>
-<p><span class="pin-hover" data-pin="11">Physical Pin 11</span> ile <span class="pin-hover" data-pin="36">Physical Pin 36</span>, ihtiyaç duyan cihazlar için akış kontrolü (RTS ve CTS) ekler. Basit seri cihazların çoğu buna ihtiyaç duymaz; bu iki pini boş bırakabilirsiniz.</p>
+<p><span class="pin-hover" data-pin="8">Physical Pin 8</span> veri gönderimi (TX), <span class="pin-hover" data-pin="10">Physical Pin 10</span> ise veri alımı (RX) için kullanılır. Linux üzerinde bu seri port /dev/ttyS3 aygıtı olarak görünür. Bağlantı sırasında harici cihazın RX hattını <span class="pin-hover" data-pin="8">Physical Pin 8</span>'e, TX hattını <span class="pin-hover" data-pin="10">Physical Pin 10</span>'a bağlayın ve cihaz ile kartın toprak bağlantılarını ortaklayın.</p>
+<p><span class="pin-hover" data-pin="11">Physical Pin 11</span> ve <span class="pin-hover" data-pin="36">Physical Pin 36</span>, akış kontrolü gerektiren cihazlar için sırasıyla RTS ve CTS hatları olarak kullanılabilir. Basit seri haberleşme uygulamalarında bu hatlara genellikle ihtiyaç duyulmaz ve bağlantısız bırakılabilir.</p>
 <blockquote>
-<p><strong>Yalnızca 3,3 V:</strong> Bu portu asla bir RS-232 portuna veya 5 V'luk bir seri dönüştürücüye bağlamayın; ikisi de kartı bozar. 3,3 V'luk bir USB-seri dönüştürücü ya da uygun bir RS-232 seviye dönüştürücü kullanın.</p>
+<p><strong>Yalnızca 3,3 V lojik seviyesi kullanın:</strong> Bu seri portu RS-232 arayüzüne veya 5 V lojik seviyeli bir seri dönüştürücüye doğrudan bağlamayın. Bu tür bağlantılar karta zarar verebilir. USB-seri bağlantısı için 3,3 V lojik seviyesini destekleyen bir USB-seri dönüştürücü veya uygun bir RS-232 seviye dönüştürücü kullanın.</p>
 </blockquote>
-<p>Kartın üzerindeki üç pinli konnektör, açılış konsolu için kullanılan ayrı bir seri porttur. Bu pinlerle aynı şey değildir.</p>
+<p>Kart üzerindeki üç pinli konnektör, açılış konsolu için ayrılmış farklı bir seri porttur. Bu konnektör, <span class="pin-hover" data-pin="8">Physical Pin 8</span>, <span class="pin-hover" data-pin="10">Physical Pin 10</span>, <span class="pin-hover" data-pin="11">Physical Pin 11</span> ve <span class="pin-hover" data-pin="36">Physical Pin 36</span> üzerindeki seri port ile aynı arayüz değildir.</p>
 <div class="details"><h2>Ayrıntılar</h2><ul>
 <li>4 GPIO pini kullanır</li>
 <li><a href="https://docs.t3gemstone.org/en/boards/o1/peripherals/serial">Daha fazla bilgi</a></li>
@@ -198,7 +198,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

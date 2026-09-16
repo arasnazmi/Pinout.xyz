@@ -5,14 +5,14 @@
 		<title>PCM - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 PCM/I2S uyumlu başlık sinyalleri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pcm.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pcm.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pcm.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="PCM - T3 Gemstone O1 Pinout">
@@ -178,34 +178,34 @@
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_pcm"><h1>PCM - Darbe Kod Modülasyonu</h1>
-<p>Dört pin dijital ses taşır ve bunlar Raspberry Pi'nin I2S için kullandığı konumlarla aynıdır; yani bir ses HAT'i fiziksel olarak yerine oturur:</p>
+<p>Dört pin, dijital ses arayüzü için kullanılır ve Raspberry Pi'nin I²S arayüzünde kullandığı fiziksel pin konumlarıyla aynıdır. Bu nedenle Raspberry Pi uyumlu bir ses HAT'i fiziksel olarak başlığa takılabilir.</p>
 <div class="table-scroll"><table>
 <thead>
 <tr>
 <th style="text-align: right;">Pin</th>
-<th style="text-align: left;">Ne taşır</th>
+<th style="text-align: left;">İşlev</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: right;">12</td>
-<td style="text-align: left;">bit saati</td>
+<td style="text-align: left;">Bit Saati (CLK)</td>
 </tr>
 <tr>
 <td style="text-align: right;">35</td>
-<td style="text-align: left;">çerçeve eşzamanlaması</td>
+<td style="text-align: left;">Çerçeve Eşzamanlaması (FS)</td>
 </tr>
 <tr>
 <td style="text-align: right;">38</td>
-<td style="text-align: left;">ses verisi, Pi'de giriş olan hat</td>
+<td style="text-align: left;">Ses verisi</td>
 </tr>
 <tr>
 <td style="text-align: right;">40</td>
-<td style="text-align: left;">ses verisi, Pi'de çıkış olan hat</td>
+<td style="text-align: left;">Ses verisi</td>
 </tr>
 </tbody>
 </table></div>
-<p>Bilmeye değer bir fark var. Raspberry Pi'de <span class="pin-hover" data-pin="38">Physical Pin 38</span> her zaman giriş, <span class="pin-hover" data-pin="40">Physical Pin 40</span> her zaman çıkıştır. Burada ise her iki veri pini yazılımda giriş ya da çıkış olarak ayarlanabilir; hangisinin ne olduğunu kablolama değil, ses yapılandırması belirler.</p>
+<p>T3 Gemstone O1 üzerinde her iki ses veri pini de yazılım üzerinden giriş veya çıkış olarak yapılandırılabilir. Veri pinlerinin yönü, fiziksel bağlantıdan bağımsız olarak kullanılan ses yapılandırmasına göre belirlenir.</p>
 <div class="details"><h2>Ayrıntılar</h2><ul>
 <li>4 GPIO pini kullanır</li>
 <li><a href="https://docs.t3gemstone.org/tr/boards/o1/peripherals/introduction">Daha fazla bilgi</a></li>
@@ -220,7 +220,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

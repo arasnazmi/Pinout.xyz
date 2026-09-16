@@ -5,14 +5,14 @@
 		<title>GPIO - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 genel amaçlı 3,3 V GPIO pinleri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/gpio.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/gpio.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/gpio.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="GPIO - T3 Gemstone O1 Pinout">
@@ -178,12 +178,12 @@
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_gpio"><h1>GPIO - Genel Amaçlı Giriş/Çıkış</h1>
-<p>T3-GEM-O1 üzerindeki 40 pin başlık size 3,3 V'luk dijital pinler sunar. Her pin bir girişi okuyabilir, bir çıkışı sürebilir veya seri port, SPI, I2C, ses ve PWM gibi özel bir işleve geçirilebilir.</p>
-<p>Bir pini Linux'tan kontrol etmek için <code>libgpiod</code>, pinleri listelemek için <code>gpioinfo</code>, okuma ve yazma için <code>gpioget</code> ve <code>gpioset</code> araçlarını kullanabilirsiniz. Raspberry Pi'nin GPIO kütüphaneleri burada çalışmaz. Pini numarasıyla değil sistem adıyla arayın; numaralar yazılım sürümleri arasında değişebilir.</p>
+<p>T3 Gemstone O1 üzerindeki 40 pinli başlık, 3,3 V lojik seviyesinde çalışan dijital GPIO pinleri sunar. Her pin; dijital giriş olarak okunabilir, dijital çıkış olarak sürülebilir veya UART, SPI, I²C, PCM ve PWM gibi alternatif işlevler için yapılandırılabilir.</p>
+<p>GPIO pinlerini Linux üzerinden kontrol etmek için <code>libgpiod</code> araçlarını kullanabilirsiniz. GPIO pinlerini listelemek için <code>gpioinfo</code>, pin durumunu okumak için <code>gpioget</code> ve pin durumunu ayarlamak için <code>gpioset</code> komutlarını kullanabilirsiniz. GPIO pinlerini fiziksel pin numarasıyla değil, sistem tarafından tanımlanan GPIO adıyla belirtmelisiniz.</p>
 <blockquote>
-<p><strong>3,3 V'ta kalın:</strong> Her pin doğrudan işlemciye bağlıdır, arada koruma sağlayan hiçbir şey yoktur. Herhangi bir pine uygulanan 5 V kartı bozabilir. Pinler güç değil sinyal için tasarlanmıştır: LED, buzzer, röle veya motor çalıştıracaksanız pini tek başına kullanmayın, bir sürücü, transistör ya da röle modülü kullanın.</p>
+<p><strong>3,3 V lojik seviyesini kullanın:</strong> GPIO pinleri doğrudan işlemciye bağlıdır ve aralarında herhangi bir koruma devresi bulunmaz. GPIO pinlerine 5 V uygulanması işlemciye ve karta zarar verebilir. GPIO pinleri yalnızca sinyal amaçlı kullanılmalıdır. LED, buzzer, röle veya motor gibi yükleri doğrudan GPIO pinine bağlamayın; bu tür yükler için uygun bir sürücü devresi, transistör veya röle modülü kullanın.</p>
 </blockquote>
-<p>Bazı işlevler ancak ilgili device tree overlay'i <code>/boot/uEnv.txt</code> içinde listelendiğinde etkinleşir, o zamana kadar pin düz bir GPIO olarak kalmaktadır.</p>
+<p>Bazı alternatif işlevler, ilgili Device Tree overlay'i <code>/boot/uEnv.txt</code> dosyasında etkinleştirildiğinde kullanılabilir. Overlay etkinleştirilmediği sürece ilgili pin GPIO olarak çalışır.</p>
 <div class="details"><h2>Ayrıntılar</h2><ul>
 <li>28 GPIO pini kullanır</li>
 <li><a href="https://docs.t3gemstone.org/en/boards/o1/peripherals/gpio">Daha fazla bilgi</a></li>
@@ -198,7 +198,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>

@@ -5,14 +5,14 @@
 		<title>PWM - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 donanımsal PWM destekli başlık pinleri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T090730" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T090730" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pwm.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pwm.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pwm.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T090730"/>
-		<!-- Build: 20260916T090730 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
+		<!-- Build: 20260916T105106 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="PWM - T3 Gemstone O1 Pinout">
@@ -178,7 +178,7 @@
 			<div id="crumbtrail"><p><a class="more" href="/tr/boards">Doğrulanmış ve koşullu uyumlu HAT ve eklentileri görüntüle &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_pwm"><h1>PWM - Darbe Genişlik Modülasyonu</h1>
-<p>Dört pin donanım üzerinden PWM üretebilir; yani zamanlama, işlemci uğraşmadan kararlı kalır. Bu pinler iki çift halinde gelir:</p>
+<p>Dört pin, donanım tabanlı PWM sinyali üretebilir. Bu sayede PWM sinyalinin zamanlaması işlemci yükünden bağımsız olarak kararlı şekilde korunur. Bu pinler iki çift halinde gruplandırılmıştır:</p>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -197,10 +197,10 @@
 </tr>
 </tbody>
 </table></div>
-<p>Bir çiftteki iki pin aynı frekansı paylaşır, ancak her birinin görev döngüsü ayrı ayarlanabilir. Yani iki frekans üzerinde dört bağımsız görev döngüsü elde edersiniz.</p>
+<p>Aynı çift içerisindeki iki pin ortak bir PWM frekansı kullanır; ancak her pinin görev döngüsü bağımsız olarak ayarlanabilir. Böylece iki farklı PWM frekansı üzerinde toplam dört bağımsız görev döngüsü yapılandırılabilir.</p>
 <p>Bunları <code>/sys/class/pwm</code> üzerinden kontrol edebilirsiniz.</p>
 <blockquote>
-<p><strong>PWM hiçbir şeyi beslemez:</strong> Bu pinler yalnızca 3,3 V'luk bir sinyal verir, fazlası değil. Servo, motor veya LED şeridi kendi güç kaynağına, toprağının başlıktaki bir toprak pinine bağlanmasına ve araya bir sürücü kartı ya da transistöre ihtiyaç duyar.</p>
+<p><strong>PWM pinleri güç çıkışı sağlamaz:</strong> Bu pinler yalnızca 3,3 V lojik seviyesinde PWM sinyali sağlar. Servo, motor veya LED şeridi gibi yükler doğrudan PWM pinlerinden beslenmemelidir. Bu tür yükler için uygun bir harici güç kaynağı kullanılmalı, yükün toprak bağlantısı başlıktaki bir toprak pinine bağlanmalı ve gerekli durumlarda uygun bir sürücü devresi veya transistör kullanılmalıdır.</p>
 </blockquote>
 <div class="details"><h2>Ayrıntılar</h2><ul>
 <li>4 GPIO pini kullanır</li>
@@ -216,7 +216,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T090730'></script>
-		<script src='/resources/boards.js?v=20260916T090730'></script>
+		<script src='/resources/pinout.js?v=20260916T105106'></script>
+		<script src='/resources/boards.js?v=20260916T105106'></script>
 </body>
 </html>
