@@ -2,17 +2,17 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>GPIO 7 (SPI chip select 2) at T3 Gemstone O1 Pinout</title>
+		<title>GPIO 7 (SPI chip select 2) - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="Interactive GPIO and expansion-header reference for the T3 Gemstone O1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin26_gpio7.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pin26_gpio7.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin26_gpio7.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		
 	</head>
 	<body class="pin">
@@ -171,7 +171,7 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="pin26_gpio7"><h1>GPIO 7 (SPI chip select 2)</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical/header pin 26</span></div><div><strong>GPIO numbering</strong><span>Compatibility GPIO 7</span></div><div><strong>Default signal</strong><span>SPI-MCU0 CS2</span></div><div><strong>Electrical</strong><span>3.3 V logic - not 5 V tolerant</span></div></div><div class="pin-description"><p>This is one of the five SPI pins: 19 sends data, 21 receives it, 23 is the clock, and 24 and 26 are the chip selects. In Linux they show up as /dev/spidev0.0 and /dev/spidev0.2 once the matching overlay is enabled.</p><div class="notice notice-warning"><strong>Warning</strong><p>The board's own pressure and motion sensors share the data and clock pins with you. They have their own chip selects, so your device will not be confused with them, but it must stop driving the data-in pin whenever its chip select is inactive or the sensor readings will be wrong. Use 3.3 V signals.</p></div><a class="learn-more" href="/pinout/spi.html">Open the related interface guide &rarr;</a></div></article>
+				<article class="pin26_gpio7"><h1>GPIO 7 (SPI chip select 2)</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical pin: 26</span></div><div><strong>GPIO numbering</strong><span>7</span></div><div><strong>Default signal</strong><span>SPI-MCU0 CS2</span></div><div><strong>Electrical</strong><span>3.3 V logic</span></div></div><div class="pin-description"><p>This pin is one of the five pins of the SPI interface. Pin 19 sends data (MOSI), pin 21 receives data (MISO), pin 23 carries the clock signal (SCLK), and pins 24 and 26 are the chip select (CS) lines. Once the matching device tree overlay is enabled, the SPI interfaces appear in Linux as the `/dev/spidev0.0` and `/dev/spidev0.2` device files.</p><div class="notice notice-warning"><strong>Warning</strong><p>The barometer and IMU sensors on the board share the data and clock lines with this SPI interface. The sensors have their own chip select lines, so there is no direct conflict with your device. However, your device must not drive the data line while its chip select is inactive, or sensor communication can be affected. Use only devices that support 3.3 V logic levels.</p></div><a class="learn-more" href="/pinout/spi.html">Open the related interface guide &rarr;</a></div></article>
 			</section>
 
 		</main>
@@ -182,7 +182,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

@@ -2,20 +2,20 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>PWM at T3 Gemstone O1 Pinout</title>
+		<title>PWM - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 hardware PWM-capable header pins" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pwm.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pwm.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pwm.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="PWM at T3 Gemstone O1 Pinout">
+		<meta property="og:title" content="PWM - T3 Gemstone O1 Pinout">
 		<meta property="og:description" content="T3 Gemstone O1 hardware PWM-capable header pins">
 		<meta property="og:image" content="https://pinout.xyz/v1/img/pwm.png">
 		<meta property="og:locale" content="en_GB">
@@ -178,7 +178,7 @@
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_pwm"><h1>PWM - Pulse-width Modulation</h1>
-<p>Four pins can produce PWM in hardware, which means the timing stays steady without the processor having to do the work. They come as two pairs:</p>
+<p>Four pins can produce a hardware-based PWM signal. This keeps the timing of the PWM signal stable and independent of processor load. These pins are grouped into two pairs:</p>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -197,10 +197,10 @@
 </tr>
 </tbody>
 </table></div>
-<p>The two pins in a pair share one frequency, but each can have its own duty cycle. So four independent duty cycles, on two frequencies.</p>
-<p>You control them through <code>/sys/class/pwm</code>. They only work once the right overlay is listed in <code>/boot/uEnv.txt</code> - see the official PWM guide for the overlay names and which <code>pwmchip</code> each pair turns into. That guide also mentions PWM on a few other pins, which needs those pins to be switched away from their normal job first.</p>
+<p>The two pins in a pair use a common PWM frequency, but the duty cycle of each pin can be set independently. This allows a total of four independent duty cycles across two different PWM frequencies.</p>
+<p>You can control them through <code>/sys/class/pwm</code>.</p>
 <blockquote>
-<p><strong>PWM does not power anything:</strong> These pins put out a 3.3 V signal, and nothing more. A servo, a motor or an LED strip needs its own power supply, with the ground connected to a ground pin on the header, and a driver board or transistor in between.</p>
+<p><strong>PWM pins do not supply power:</strong> These pins provide a PWM signal at 3.3 V logic levels only. Loads such as servos, motors or LED strips must not be powered directly from the PWM pins. Use a suitable external power supply for such loads, connect the ground of the load to a ground pin on the header, and use a suitable driver circuit or transistor where required.</p>
 </blockquote>
 <div class="details"><h2>Details</h2><ul>
 <li>Uses 4 GPIO pins</li>
@@ -216,7 +216,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

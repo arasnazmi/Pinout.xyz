@@ -23,18 +23,25 @@ pin:
     direction: both
     active: high
 -->
-# I2C - Inter-Integrated Circuit
 
-Physical Pin 3 (data) and Physical Pin 5 (clock) are the I2C bus for your own devices. Nothing else on the board uses it, so the whole bus is yours. The pull-up resistors an I2C bus needs are already fitted on the board, so you do not have to add any.
+# I2C
 
-Different software images number the bus differently, so it can show up as `/dev/i2c-1` or `/dev/i2c-2`. Run `ls /dev/i2c-*` to see which buses exist, then `i2cdetect` on one to see what is connected.
+Physical Pin 3 (data) and Physical Pin 5 (clock) form the I2C bus reserved for external devices. No device on the board is connected to this bus, so it is dedicated to external devices. The pull-up resistors required for I2C communication are already on the board and no additional resistors are needed.
 
-> **Before you connect anything:** Use 3.3 V devices only. Give every device on the bus a different address, or they will fight each other. If you do add pull-up resistors, remember the board already has its own.
+The I2C bus number can vary depending on the software image in use. The bus can appear as `/dev/i2c-1` or `/dev/i2c-2`. Use the following command to list the available I2C buses:
 
-## Pins 27 and 28 are a shared bus
+```bash
+ls /dev/i2c-*
+```
 
-These two pins are a second, working I2C bus, with its pull-up resistors fitted just like the first one. The difference is that you are not alone on it: the chip that manages the board's power, the real-time clock and a small memory chip are already connected to it. On a Raspberry Pi this is also where a HAT keeps its identification chip, and a HAT that expects that will find it here.
+Use the `i2cdetect` command on a bus to see the connected devices and their I2C addresses.
 
-So you can use these pins - you just have to share. Before choosing a device, run `i2cdetect` on this bus to see which addresses are already taken, and pick one that does not clash. Whether the bus appears as a `/dev/i2c-*` device at all depends on your software image, so check first.
+> **Before connecting:** Use only devices that support 3.3 V logic levels. Every device on the I2C bus must have a unique address; using the same address on more than one device can cause communication conflicts. Before adding external pull-up resistors, take into account that the board already has pull-up resistors fitted.
 
-> **Take more care here than on pins 3 and 5:** The power-management chip is on this bus, so a short, a wrong voltage or a device that jams the bus can take the whole board down rather than just your accessory. Do not reconfigure the devices that are already there. For everyday sensors and add-ons, Physical Pin 3 and Physical Pin 5 are the easier choice, because that bus is yours alone.
+## Pins 27 and 28 are a shared I2C bus
+
+Physical Pin 27 and Physical Pin 28 belong to the second I2C bus on the board. The pull-up resistors required for this bus are already on the board. The power management IC (PMIC), the real-time clock (RTC) and the EEPROM are connected to this bus internally.
+
+You can connect external I2C devices to these pins. Because the bus is shared with the existing devices, use the `i2cdetect` command to check the I2C addresses already present on the bus before connecting a new device, and use a unique address that does not cause a conflict.
+
+> **Caution:** This I2C bus must be used more carefully than the one on pins 3 and 5. Because the power management IC (PMIC) is connected to this bus, a short circuit, an incorrect voltage or a jammed bus can affect the operation not only of the connected peripheral but of the whole board. Do not change the configuration of the devices already present on the bus. For general-purpose sensor and peripheral connections, the I2C bus on Physical Pin 3 and Physical Pin 5 is recommended. That bus is reserved for external devices.

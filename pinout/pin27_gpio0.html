@@ -2,17 +2,17 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>GPIO 0 at T3 Gemstone O1 Pinout</title>
+		<title>GPIO 0 - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="Interactive GPIO and expansion-header reference for the T3 Gemstone O1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin27_gpio0.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pin27_gpio0.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin27_gpio0.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		
 	</head>
 	<body class="pin">
@@ -171,7 +171,7 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="pin27_gpio0"><h1>GPIO 0</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical/header pin 27</span></div><div><strong>GPIO numbering</strong><span>Compatibility GPIO 0</span></div><div><strong>Default signal</strong><span>I2C-WKUP0 SDA</span></div><div><strong>Electrical</strong><span>3.3 V logic - not 5 V tolerant</span></div></div><div class="pin-description"><p>This is one of the two pins of a second I2C bus, which works like the first one but is shared: the chip that manages the board's power, the real-time clock and a small memory chip are already on it. On a Raspberry Pi this is also where a HAT keeps its identification chip.</p><div class="notice notice-warning"><strong>Warning</strong><p>You can add a device here, but check with i2cdetect which addresses are already taken and pick one that does not clash, and leave the existing devices alone. Take more care than on pins 3 and 5: the power-management chip is on this bus, so a short or a jammed bus stops the whole board. For everyday add-ons, pins 3 and 5 are the easier choice.</p></div><a class="learn-more" href="/pinout/i2c.html">Open the related interface guide &rarr;</a></div></article>
+				<article class="pin27_gpio0"><h1>GPIO 0</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical pin: 27</span></div><div><strong>GPIO numbering</strong><span>0</span></div><div><strong>Default signal</strong><span>I2C-WKUP0 SDA</span></div><div><strong>Electrical</strong><span>3.3 V logic</span></div></div><div class="pin-description"><p>This pin is one of the two lines of the second I2C bus. The interface works the same way as the first I2C bus, but this bus is shared with other components on the board. The power management IC (PMIC), the real-time clock (RTC) and a memory chip (EEPROM) are connected to it internally. When connecting an external device, take the I2C addresses of the existing devices and any possible address conflicts on the bus into account.</p><div class="notice notice-warning"><strong>Warning</strong><p>You can connect an external device to this I2C bus. Before connecting it, use `i2cdetect` to check the I2C addresses already present on the bus and choose an address that does not clash. Do not interfere with the connections or the configuration of the existing devices. This bus needs more care than pins 3 and 5. Because the power management IC (PMIC) is connected to the same bus, a short circuit or a jammed bus affects power management on the board and can stop the whole system from running. For general-purpose external devices, the I2C bus on pins 3 and 5 is recommended.</p></div><a class="learn-more" href="/pinout/i2c.html">Open the related interface guide &rarr;</a></div></article>
 			</section>
 
 		</main>
@@ -182,7 +182,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

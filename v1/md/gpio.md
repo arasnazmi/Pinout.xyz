@@ -35,10 +35,13 @@ pin:
   '38':
   '40':
 -->
+
 # GPIO - General Purpose Input/Output
 
-The 40-pin header on the T3-GEM-O1 gives you 3.3 V digital pins. Each one can read an input, drive an output, or be switched to a special function such as serial, SPI, I2C, audio or PWM.
+The 40-pin header on the T3 Gemstone O1 provides digital GPIO pins operating at 3.3 V logic levels. Each pin can be read as a digital input, driven as a digital output, or configured for an alternate function such as UART, SPI, I2C, PCM and PWM.
 
-To control a pin from Linux you can use the `libgpiod` tools: `gpioinfo` to list the pins, `gpioget` and `gpioset` to read and write one. Raspberry Pi's GPIO libraries will not work here. Look the pin up by its system name rather than by its number, as the numbers can change between software versions.
+Use the `libgpiod` tools to control the GPIO pins from Linux. Use `gpioinfo` to list the GPIO pins, `gpioget` to read a pin state and `gpioset` to set a pin state. Refer to GPIO pins by the GPIO name assigned by the system rather than by the physical pin number.
 
-> **Keep it at 3.3 V:** Every pin connects straight to the processor, with nothing in between to protect it. 5 V on any pin can destroy the board. The pins are also meant for signals, not power: use a driver, transistor or relay module to run LEDs, buzzers, relays or motors, not the pin on its own.
+> **Use 3.3 V logic levels:** The GPIO pins are connected directly to the processor with no protection circuitry in between. Applying 5 V to a GPIO pin can damage the processor and the board. The GPIO pins must be used for signals only. Do not connect loads such as LEDs, buzzers, relays or motors directly to a GPIO pin; use a suitable driver circuit, transistor or relay module for such loads.
+
+Some alternate functions become available once the matching device tree overlay is enabled in `/boot/uEnv.txt`. Until the overlay is enabled, the pin operates as a GPIO.

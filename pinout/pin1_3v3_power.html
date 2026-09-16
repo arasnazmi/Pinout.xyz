@@ -2,17 +2,17 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>3.3 V Power at T3 Gemstone O1 Pinout</title>
+		<title>3.3 V Power - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="Interactive GPIO and expansion-header reference for the T3 Gemstone O1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin1_3v3_power.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pin1_3v3_power.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin1_3v3_power.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		
 	</head>
 	<body class="pin">
@@ -171,7 +171,7 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="pin1_3v3_power"><h1>3.3 V Power</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical/header pin 1</span></div><div><strong>Default signal</strong><span>3.3 V Power</span></div><div><strong>Electrical</strong><span>Regulated 3.3 V supply</span></div></div><div class="pin-description"><p>This pin supplies 3.3 V, the same voltage the signal pins work at, which makes it the right supply for sensors and other low-power add-ons. The board shares this supply with the M.2 slot and the camera, display and USB connectors.</p><div class="notice notice-warning"><strong>Warning</strong><p>Give motors, heaters, LED strips and servos their own supply. Do not feed your own 3.3 V into pins 1 or 17: they are an output, and doing so pushes against the board's regulator.</p></div><a class="learn-more" href="/pinout/3v3_power.html">Open the related interface guide &rarr;</a></div></article>
+				<article class="pin1_3v3_power"><h1>3.3 V Power</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical pin: 1</span></div><div><strong>Default signal</strong><span>3.3 V Power</span></div><div><strong>Electrical</strong><span>Regulated 3.3 V supply</span></div></div><div class="pin-description"><p>This pin supplies 3.3 V. This voltage level matches the logic level used on the signal pins and can be used for sensors and low-power peripherals. The 3.3 V supply rail is shared with the M.2 slot and the camera, display and USB connectors on the board.</p><div class="notice notice-warning"><strong>Warning</strong><p>Do not power high-current loads such as motors, heaters, LED strips and servos from this pin; use an external power supply for such loads. Do not apply an external 3.3 V supply to pin 1 or pin 17. The board drives these pins as outputs, and applying an external supply can damage the power circuitry.</p></div><a class="learn-more" href="/pinout/3v3_power.html">Open the related interface guide &rarr;</a></div></article>
 			</section>
 
 		</main>
@@ -182,7 +182,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

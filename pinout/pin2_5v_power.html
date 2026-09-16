@@ -2,17 +2,17 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>5 V Power at T3 Gemstone O1 Pinout</title>
+		<title>5 V Power - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="Interactive GPIO and expansion-header reference for the T3 Gemstone O1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin2_5v_power.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pin2_5v_power.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin2_5v_power.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		
 	</head>
 	<body class="pin">
@@ -171,7 +171,7 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="pin2_5v_power"><h1>5 V Power</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical/header pin 2</span></div><div><strong>Default signal</strong><span>5 V Power</span></div><div><strong>Electrical</strong><span>5 V supply rail</span></div></div><div class="pin-description"><p>This pin supplies 5 V for add-ons that need more than 3.3 V. It comes from a regulator on the board rather than straight from your power supply. The signal pins are still 3.3 V only.</p><div class="notice notice-warning"><strong>Warning</strong><p>Do not feed power into pins 2 or 4 - they are an output, and pushing 5 V in fights the board's regulator and skips the protection on its power input. Motors, heaters and large LED or servo loads need their own supply, sharing a ground with the board where required.</p></div><a class="learn-more" href="/pinout/5v_power.html">Open the related interface guide &rarr;</a></div></article>
+				<article class="pin2_5v_power"><h1>5 V Power</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical pin: 2</span></div><div><strong>Default signal</strong><span>5 V Power</span></div><div><strong>Electrical</strong><span>5 V supply rail</span></div></div><div class="pin-description"><p>This pin supplies 5 V for peripherals that need a supply voltage higher than the 3.3 V logic level. The supply voltage comes through the power regulator on the board rather than directly from the external power source. The signal pins, however, support 3.3 V logic levels only.</p><div class="notice notice-warning"><strong>Warning</strong><p>Do not apply an external 5 V supply to the board through pin 2 or pin 4. These pins are 5 V outputs; applying an external voltage can damage the board's power circuitry and disable the protection mechanisms on its power input. Use an external power supply for high-current loads such as motors, heaters, high-power LEDs and servos. When an external power supply is used, connect its ground to the board's GND where required.</p></div><a class="learn-more" href="/pinout/5v_power.html">Open the related interface guide &rarr;</a></div></article>
 			</section>
 
 		</main>
@@ -182,7 +182,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

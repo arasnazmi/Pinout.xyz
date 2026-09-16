@@ -2,20 +2,20 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>GPIO at T3 Gemstone O1 Pinout</title>
+		<title>GPIO - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 general-purpose 3.3 V GPIO pins" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/gpio.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/gpio.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/gpio.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="GPIO at T3 Gemstone O1 Pinout">
+		<meta property="og:title" content="GPIO - T3 Gemstone O1 Pinout">
 		<meta property="og:description" content="T3 Gemstone O1 general-purpose 3.3 V GPIO pins">
 		<meta property="og:image" content="https://pinout.xyz/v1/img/gpio.png">
 		<meta property="og:locale" content="en_GB">
@@ -178,11 +178,12 @@
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_gpio"><h1>GPIO - General Purpose Input/Output</h1>
-<p>The 40-pin header on the T3-GEM-O1 gives you 3.3 V digital pins. Each one can read an input, drive an output, or be switched to a special function such as serial, SPI, I2C, audio or PWM.</p>
-<p>To control a pin from Linux you can use the <code>libgpiod</code> tools: <code>gpioinfo</code> to list the pins, <code>gpioget</code> and <code>gpioset</code> to read and write one. Raspberry Pi's GPIO libraries will not work here. Look the pin up by its system name rather than by its number, as the numbers can change between software versions.</p>
+<p>The 40-pin header on the T3 Gemstone O1 provides digital GPIO pins operating at 3.3 V logic levels. Each pin can be read as a digital input, driven as a digital output, or configured for an alternate function such as UART, SPI, I2C, PCM and PWM.</p>
+<p>Use the <code>libgpiod</code> tools to control the GPIO pins from Linux. Use <code>gpioinfo</code> to list the GPIO pins, <code>gpioget</code> to read a pin state and <code>gpioset</code> to set a pin state. Refer to GPIO pins by the GPIO name assigned by the system rather than by the physical pin number.</p>
 <blockquote>
-<p><strong>Keep it at 3.3 V:</strong> Every pin connects straight to the processor, with nothing in between to protect it. 5 V on any pin can destroy the board. The pins are also meant for signals, not power: use a driver, transistor or relay module to run LEDs, buzzers, relays or motors, not the pin on its own.</p>
+<p><strong>Use 3.3 V logic levels:</strong> The GPIO pins are connected directly to the processor with no protection circuitry in between. Applying 5 V to a GPIO pin can damage the processor and the board. The GPIO pins must be used for signals only. Do not connect loads such as LEDs, buzzers, relays or motors directly to a GPIO pin; use a suitable driver circuit, transistor or relay module for such loads.</p>
 </blockquote>
+<p>Some alternate functions become available once the matching device tree overlay is enabled in <code>/boot/uEnv.txt</code>. Until the overlay is enabled, the pin operates as a GPIO.</p>
 <div class="details"><h2>Details</h2><ul>
 <li>Uses 28 GPIO pins</li>
 <li><a href="https://docs.t3gemstone.org/en/boards/o1/peripherals/gpio">More information</a></li>
@@ -197,7 +198,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

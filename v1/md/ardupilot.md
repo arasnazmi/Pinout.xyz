@@ -49,23 +49,24 @@ pin:
   '37':
     name: Buzzer
 -->
-# ArduPilot header connections
 
-These connections are the 40-pin header functions assigned by the official T3 Gemstone ArduPilot configuration after the required device-tree overlays are enabled.
+# ArduPilot GPIO connections
+
+This section shows the functions assigned to the 40-pin header by the official T3 Gemstone ArduPilot configuration once the required device tree overlays are enabled.
 
 ## Navigation and control
 
-* **GPS and external compass:** pins 7 (UART-MAIN6 RX), 11 (UART-MAIN6 TX), 3 (I2C-MCU0 SDA) and 5 (I2C-MCU0 SCL).
-* **RC input:** pin 10 (UART-MAIN1 RX) accepts SBUS.
-* **RC outputs:** pins 29, 8, 31, 33, 32, 36 and 12 provide RCOut 1 through RCOut 7 respectively.
-* **Telemetry:** pins 18 (UART-WKUP0 TX) and 26 (UART-WKUP0 RX).
+* **GPS and external compass:** pins 7 (UART-MAIN6 RX), 11 (UART-MAIN6 TX), 3 (I2C-MCU0 SDA) and 5 (I2C-MCU0 SCL) are used.
+* **RC input:** pin 10 (UART-MAIN1 RX) supports the SBUS signal.
+* **RC outputs:** pins 29, 8, 31, 33, 32, 36 and 12 provide RCOut 1-7 respectively.
+* **Telemetry:** pins 18 (UART-WKUP0 TX) and 26 (UART-WKUP0 RX) are used.
 
 ## Other assigned pins
 
-Pins 19, 21, 23 and 24 form SPI-MCU0. Pins 27 and 28 are reserved I2C-WKUP0 lines, while pin 37 is assigned to the external buzzer.
+Pins 19, 21, 23 and 24 form the SPI-MCU0 interface. Pins 27 and 28 are reserved for I2C-WKUP0, while pin 37 is assigned to an external buzzer connection.
 
-> **SBUS warning:** SBUS uses an inverted serial signal. An external signal inverter is required between the receiver and pin 10; do not connect a standard SBUS output directly.
+> **SBUS warning:** SBUS uses an inverted serial signal. Connect an external signal inverter between the receiver and pin 10. Do not connect a standard SBUS output directly to pin 10.
 
-> **Power and logic warning:** RCOut pins carry 3.3 V PWM logic only; they do not power a servo. Power servos and other loads from a correctly rated external supply with a shared ground, and use a driver or level shifter when required. Verify that GPS and telemetry signal levels are 3.3 V before connection.
+> **Power and logic warning:** The RCOut pins provide a PWM signal at 3.3 V logic levels only and do not supply power for servos. Power servos and other external loads from an external supply with a sufficient current rating that shares a common ground with the board. Use a suitable driver circuit or logic level converter where required. Before connecting GPS and telemetry devices, verify that their signal levels match 3.3 V logic levels.
 
-Enable every overlay listed in the official ArduPilot guide before wiring peripherals. The guide also documents Linux device paths, service setup and QGroundControl connectivity.
+Before wiring peripherals, enable the required device tree overlays listed in the official T3 Gemstone documentation. That guide also describes Linux device paths, service configuration and QGroundControl connectivity.

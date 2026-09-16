@@ -2,20 +2,20 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>UART at T3 Gemstone O1 Pinout</title>
+		<title>UART - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 UART-MAIN1 header pins and optional UART routes" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/uart.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/uart.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/uart.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="UART at T3 Gemstone O1 Pinout">
+		<meta property="og:title" content="UART - T3 Gemstone O1 Pinout">
 		<meta property="og:description" content="T3 Gemstone O1 UART-MAIN1 header pins and optional UART routes">
 		<meta property="og:image" content="https://pinout.xyz/v1/img/uart.png">
 		<meta property="og:locale" content="en_GB">
@@ -177,16 +177,13 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="page_uart"><h1>UART - Universal Asynchronous Receiver/Transmitter</h1>
-<p><span class="pin-hover" data-pin="8">Physical Pin 8</span> sends and <span class="pin-hover" data-pin="10">Physical Pin 10</span> receives. In Linux this serial port is <code>/dev/ttyS3</code>. Connect your device's receive pin to <span class="pin-hover" data-pin="8">Physical Pin 8</span> and its send pin to <span class="pin-hover" data-pin="10">Physical Pin 10</span>, and share a ground.</p>
-<p><span class="pin-hover" data-pin="11">Physical Pin 11</span> and <span class="pin-hover" data-pin="36">Physical Pin 36</span> add flow control, RTS and CTS, for devices that need it. Most simple serial devices do not, and you can leave these two unconnected.</p>
+				<article class="page_uart"><h1>UART</h1>
+<p><span class="pin-hover" data-pin="8">Physical Pin 8</span> is used to send data (TX) and <span class="pin-hover" data-pin="10">Physical Pin 10</span> to receive it (RX). In Linux this serial port appears as the /dev/ttyS3 device. When wiring, connect the RX line of the external device to <span class="pin-hover" data-pin="8">Physical Pin 8</span> and its TX line to <span class="pin-hover" data-pin="10">Physical Pin 10</span>, and connect the grounds of the device and the board together.</p>
+<p><span class="pin-hover" data-pin="11">Physical Pin 11</span> and <span class="pin-hover" data-pin="36">Physical Pin 36</span> can be used as the RTS and CTS lines respectively, for devices that need flow control. Simple serial communication applications generally do not need these lines and they can be left unconnected.</p>
 <blockquote>
-<p><strong>3.3 V only:</strong> Never wire this port to an RS-232 port or a 5 V serial adapter. Both will damage the board. Use a 3.3 V USB-to-serial adapter, or a proper RS-232 level converter.</p>
+<p><strong>Use 3.3 V logic levels only:</strong> Do not connect this serial port directly to an RS-232 interface or to a serial converter with 5 V logic levels. Such connections can damage the board. For a USB serial connection, use a USB-to-serial converter that supports 3.3 V logic levels, or a suitable RS-232 level converter.</p>
 </blockquote>
-<p>The three-pin connector on the board itself is a separate serial port used for the boot console. It is not these pins.</p>
-<blockquote>
-<p><strong>Other uses for these pins:</strong> Some overlays move a different serial port onto <span class="pin-hover" data-pin="7">Physical Pin 7</span> and <span class="pin-hover" data-pin="11">Physical Pin 11</span>, which also turns Bluetooth off and takes <span class="pin-hover" data-pin="11">Physical Pin 11</span> away from flow control. Another puts a serial port on <span class="pin-hover" data-pin="18">Physical Pin 18</span> and <span class="pin-hover" data-pin="26">Physical Pin 26</span>, which takes <span class="pin-hover" data-pin="26">Physical Pin 26</span> away from SPI. These four pins are also shared inside the processor with the audio interface, so a full audio setup and flow control cannot both be active. Check <code>/boot/uEnv.txt</code> and reboot before wiring one of these up.</p>
-</blockquote>
+<p>The three-pin connector on the board is a separate serial port reserved for the boot console. This connector is not the same interface as the serial port on <span class="pin-hover" data-pin="8">Physical Pin 8</span>, <span class="pin-hover" data-pin="10">Physical Pin 10</span>, <span class="pin-hover" data-pin="11">Physical Pin 11</span> and <span class="pin-hover" data-pin="36">Physical Pin 36</span>.</p>
 <div class="details"><h2>Details</h2><ul>
 <li>Uses 4 GPIO pins</li>
 <li><a href="https://docs.t3gemstone.org/en/boards/o1/peripherals/serial">More information</a></li>
@@ -201,7 +198,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

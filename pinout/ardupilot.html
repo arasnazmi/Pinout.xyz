@@ -2,20 +2,20 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>ArduPilot at T3 Gemstone O1 Pinout</title>
+		<title>ArduPilot - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 header functions used by ArduPilot" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/ardupilot.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/ardupilot.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/ardupilot.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="ArduPilot at T3 Gemstone O1 Pinout">
+		<meta property="og:title" content="ArduPilot - T3 Gemstone O1 Pinout">
 		<meta property="og:description" content="T3 Gemstone O1 header functions used by ArduPilot">
 		<meta property="og:image" content="https://pinout.xyz/v1/img/ardupilot.png">
 		<meta property="og:locale" content="en_GB">
@@ -177,22 +177,22 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="page_ardupilot"><h1>ArduPilot header connections</h1>
-<p>These connections are the 40-pin header functions assigned by the official T3 Gemstone ArduPilot configuration after the required device-tree overlays are enabled.</p>
+				<article class="page_ardupilot"><h1>ArduPilot GPIO connections</h1>
+<p>This section shows the functions assigned to the 40-pin header by the official T3 Gemstone ArduPilot configuration once the required device tree overlays are enabled.</p>
 <h2>Navigation and control</h2>
 <ul>
-<li><strong>GPS and external compass:</strong> pins 7 (UART-MAIN6 RX), 11 (UART-MAIN6 TX), 3 (I2C-MCU0 SDA) and 5 (I2C-MCU0 SCL).</li>
-<li><strong>RC input:</strong> pin 10 (UART-MAIN1 RX) accepts SBUS.</li>
-<li><strong>RC outputs:</strong> pins 29, 8, 31, 33, 32, 36 and 12 provide RCOut 1 through RCOut 7 respectively.</li>
-<li><strong>Telemetry:</strong> pins 18 (UART-WKUP0 TX) and 26 (UART-WKUP0 RX).</li>
+<li><strong>GPS and external compass:</strong> pins 7 (UART-MAIN6 RX), 11 (UART-MAIN6 TX), 3 (I2C-MCU0 SDA) and 5 (I2C-MCU0 SCL) are used.</li>
+<li><strong>RC input:</strong> pin 10 (UART-MAIN1 RX) supports the SBUS signal.</li>
+<li><strong>RC outputs:</strong> pins 29, 8, 31, 33, 32, 36 and 12 provide RCOut 1-7 respectively.</li>
+<li><strong>Telemetry:</strong> pins 18 (UART-WKUP0 TX) and 26 (UART-WKUP0 RX) are used.</li>
 </ul>
 <h2>Other assigned pins</h2>
-<p>Pins 19, 21, 23 and 24 form SPI-MCU0. Pins 27 and 28 are reserved I2C-WKUP0 lines, while pin 37 is assigned to the external buzzer.</p>
+<p>Pins 19, 21, 23 and 24 form the SPI-MCU0 interface. Pins 27 and 28 are reserved for I2C-WKUP0, while pin 37 is assigned to an external buzzer connection.</p>
 <blockquote>
-<p><strong>SBUS warning:</strong> SBUS uses an inverted serial signal. An external signal inverter is required between the receiver and pin 10; do not connect a standard SBUS output directly.</p>
-<p><strong>Power and logic warning:</strong> RCOut pins carry 3.3 V PWM logic only; they do not power a servo. Power servos and other loads from a correctly rated external supply with a shared ground, and use a driver or level shifter when required. Verify that GPS and telemetry signal levels are 3.3 V before connection.</p>
+<p><strong>SBUS warning:</strong> SBUS uses an inverted serial signal. Connect an external signal inverter between the receiver and pin 10. Do not connect a standard SBUS output directly to pin 10.</p>
+<p><strong>Power and logic warning:</strong> The RCOut pins provide a PWM signal at 3.3 V logic levels only and do not supply power for servos. Power servos and other external loads from an external supply with a sufficient current rating that shares a common ground with the board. Use a suitable driver circuit or logic level converter where required. Before connecting GPS and telemetry devices, verify that their signal levels match 3.3 V logic levels.</p>
 </blockquote>
-<p>Enable every overlay listed in the official ArduPilot guide before wiring peripherals. The guide also documents Linux device paths, service setup and QGroundControl connectivity.</p>
+<p>Before wiring peripherals, enable the required device tree overlays listed in the official T3 Gemstone documentation. That guide also describes Linux device paths, service configuration and QGroundControl connectivity.</p>
 <div class="details"><h2>Details</h2><ul>
 <li>Uses 21 GPIO pins</li>
 <li><a href="https://docs.t3gemstone.org/en/projects/ardupilot">More information</a></li>
@@ -207,7 +207,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

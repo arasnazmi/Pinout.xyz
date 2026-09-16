@@ -2,20 +2,20 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>5v Power at T3 Gemstone O1 Pinout</title>
+		<title>5v Power - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="T3 Gemstone O1 5 V header supply pins" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/5v_power.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/5v_power.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/5v_power.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		<meta property="og:site_name" content="Gemstone Pinout">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="5v Power at T3 Gemstone O1 Pinout">
+		<meta property="og:title" content="5v Power - T3 Gemstone O1 Pinout">
 		<meta property="og:description" content="T3 Gemstone O1 5 V header supply pins">
 		<meta property="og:image" content="https://pinout.xyz/v1/img/5v_power.png">
 		<meta property="og:locale" content="en_GB">
@@ -178,10 +178,10 @@
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
 				<article class="page_5v_power"><h1>5 V Power</h1>
-<p><span class="pin-hover" data-pin="2">Physical Pin 2</span> and <span class="pin-hover" data-pin="4">Physical Pin 4</span> supply 5 V, for add-ons that need more than 3.3 V. Remember that the signal pins are still 3.3 V only - powering a board from 5 V does not mean you can send 5 V back into a GPIO pin.</p>
-<p>This 5 V comes from a regulator on the board rather than straight from whatever you plugged in, and the board can switch it off.</p>
+<p><span class="pin-hover" data-pin="2">Physical Pin 2</span> and <span class="pin-hover" data-pin="4">Physical Pin 4</span> supply 5 V for peripherals that need a supply voltage higher than 3.3 V. The signal pins, however, support 3.3 V logic levels only. The fact that a peripheral can be powered from 5 V does not mean that it may apply 5 V logic signals to the GPIO pins.</p>
+<p>The 5 V on these pins is not supplied directly from the external power source; it is produced by the power regulator on the board. Depending on the power management configuration, this supply rail can be disabled.</p>
 <blockquote>
-<p><strong>Do not feed power in:</strong> These pins are an output. Pushing 5 V into them fights the board's regulator and skips the protection on the board's own power input, so it is a good way to damage something.</p>
+<p><strong>Do not feed power in:</strong> <span class="pin-hover" data-pin="2">Physical Pin 2</span> and <span class="pin-hover" data-pin="4">Physical Pin 4</span> are 5 V outputs. Applying an external 5 V to these pins can cause a conflict with the power regulator on the board and disable the protection circuitry on the power input. For that reason, do not power the board through these pins.</p>
 </blockquote>
 <div class="details"><h2>Details</h2><ul>
 <li><a href="https://docs.t3gemstone.org/en/boards/o1/peripherals/introduction">More information</a></li>
@@ -196,7 +196,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>

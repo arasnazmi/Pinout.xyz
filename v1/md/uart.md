@@ -23,14 +23,13 @@ pin:
     direction: input
     active: low
 -->
-# UART - Universal Asynchronous Receiver/Transmitter
 
-Physical Pin 8 sends and Physical Pin 10 receives. In Linux this serial port is `/dev/ttyS3`. Connect your device's receive pin to Physical Pin 8 and its send pin to Physical Pin 10, and share a ground.
+# UART
 
-Physical Pin 11 and Physical Pin 36 add flow control, RTS and CTS, for devices that need it. Most simple serial devices do not, and you can leave these two unconnected.
+Physical Pin 8 is used to send data (TX) and Physical Pin 10 to receive it (RX). In Linux this serial port appears as the /dev/ttyS3 device. When wiring, connect the RX line of the external device to Physical Pin 8 and its TX line to Physical Pin 10, and connect the grounds of the device and the board together.
 
-> **3.3 V only:** Never wire this port to an RS-232 port or a 5 V serial adapter. Both will damage the board. Use a 3.3 V USB-to-serial adapter, or a proper RS-232 level converter.
+Physical Pin 11 and Physical Pin 36 can be used as the RTS and CTS lines respectively, for devices that need flow control. Simple serial communication applications generally do not need these lines and they can be left unconnected.
 
-The three-pin connector on the board itself is a separate serial port used for the boot console. It is not these pins.
+> **Use 3.3 V logic levels only:** Do not connect this serial port directly to an RS-232 interface or to a serial converter with 5 V logic levels. Such connections can damage the board. For a USB serial connection, use a USB-to-serial converter that supports 3.3 V logic levels, or a suitable RS-232 level converter.
 
-> **Other uses for these pins:** Some overlays move a different serial port onto Physical Pin 7 and Physical Pin 11, which also turns Bluetooth off and takes Physical Pin 11 away from flow control. Another puts a serial port on Physical Pin 18 and Physical Pin 26, which takes Physical Pin 26 away from SPI. These four pins are also shared inside the processor with the audio interface, so a full audio setup and flow control cannot both be active. Check `/boot/uEnv.txt` and reboot before wiring one of these up.
+The three-pin connector on the board is a separate serial port reserved for the boot console. This connector is not the same interface as the serial port on Physical Pin 8, Physical Pin 10, Physical Pin 11 and Physical Pin 36.

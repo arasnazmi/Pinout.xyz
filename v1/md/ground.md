@@ -15,8 +15,9 @@ pin:
   '34':
   '39':
 -->
+
 # Ground
 
-Physical pins 6, 9, 14, 20, 25, 30, 34 and 39 are ground. All eight are the same connection, so it makes no difference which one you use - pick whichever is closest to the pin you are wiring, to keep the wires short and the layout easy to follow.
+Physical pins 6, 9, 14, 20, 25, 30, 34 and 39 are the ground (GND) connection. All of these pins are connected to the common ground of the board; there is no functional difference between them in use. To keep wiring tidy and short, you can use the ground pin nearest the connection point.
 
-Every add-on needs a ground connection back to the board, including ones with their own power supply.
+Every peripheral connected to the board, including those with their own external power supply, must share a common ground connection with the board.

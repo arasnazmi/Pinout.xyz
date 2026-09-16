@@ -15,17 +15,16 @@ pin:
   '40':
     name: DATA1
 -->
+
 # PCM - Pulse-code Modulation
 
-Four pins carry digital audio, in the same positions a Raspberry Pi uses for I2S, so an audio HAT will line up physically:
+Four pins are used for the digital audio interface, in the same physical pin positions that the Raspberry Pi uses for its I2S interface. For that reason a Raspberry Pi compatible audio HAT can be plugged into the header physically.
 
-| Pin | What it carries |
+| Pin | Function |
 | --: | :-- |
-| 12 | bit clock |
-| 35 | frame sync |
-| 38 | audio data, the input on a Pi |
-| 40 | audio data, the output on a Pi |
+| 12 | Bit clock (CLK) |
+| 35 | Frame sync (FS) |
+| 38 | Audio data |
+| 40 | Audio data |
 
-There is one difference worth knowing. On a Pi, Physical Pin 38 is always the input and Physical Pin 40 always the output. Here either data pin can be set up as an input or an output in software, so which one is which depends on the audio configuration rather than on the wiring.
-
-> **Physical fit is not enough:** A Raspberry Pi audio HAT plugs in, but it will only work if the T3 Gemstone software has a driver for that HAT's audio chip and the signals are set up the right way round. Check the T3 Gemstone documentation before buying one for audio.
+On the T3 Gemstone O1 both audio data pins can be configured as an input or an output in software. The direction of the data pins is determined by the audio configuration in use rather than by the physical wiring.

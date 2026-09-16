@@ -2,17 +2,17 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>GPIO 3 (I2C-MCU0 clock) at T3 Gemstone O1 Pinout</title>
+		<title>GPIO 3 (I2C-MCU0 clock) - T3 Gemstone O1 Pinout</title>
 		<meta name="description" content="Interactive GPIO and expansion-header reference for the T3 Gemstone O1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-		<link href="/resources/pinout.css?v=20260916T105106" rel="stylesheet">
-		<link href="/resources/print.css?v=20260916T105106" rel="stylesheet" media="print">
+		<link href="/resources/pinout.css?v=20260916T115258" rel="stylesheet">
+		<link href="/resources/print.css?v=20260916T115258" rel="stylesheet" media="print">
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin5_gpio3.html" hreflang="en"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/tr/pinout/pin5_gpio3.html" hreflang="tr"/>
 		<link rel="alternate" href="https://pinout.t3gemstone.org/pinout/pin5_gpio3.html" hreflang="x-default"/>
 		<link rel="icon" href="/resources/gemstone-mark-dark.png" type="image/png">
-		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T105106"/>
-		<!-- Build: 20260916T105106 -->
+		<meta name="generator" content="Gemstone Pinout, based on Pinout.xyz @ https://github.com/pinout-xyz/pinout.xyz, timestamp: 20260916T115258"/>
+		<!-- Build: 20260916T115258 -->
 		
 	</head>
 	<body class="pin">
@@ -171,7 +171,7 @@
 			</div>
 			<div id="crumbtrail"><p><a class="more" href="/boards">Browse verified and conditionally compatible HATs and add-ons &raquo;</a></p></div>
 			<section id="content" tabindex="-1">
-				<article class="pin5_gpio3"><h1>GPIO 3 (I2C-MCU0 clock)</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical/header pin 5</span></div><div><strong>GPIO numbering</strong><span>Compatibility GPIO 3</span></div><div><strong>Default signal</strong><span>I2C-MCU0 SCL</span></div><div><strong>Electrical</strong><span>3.3 V logic - not 5 V tolerant</span></div></div><div class="pin-description"><p>This is one of the two I2C pins for your own devices: pin 3 is data and pin 5 is the clock. The pull-up resistors are already on the board. Run ls /dev/i2c-* to find the bus, as its number changes between software images.</p><div class="notice notice-warning"><strong>Warning</strong><p>Use 3.3 V devices only, and give every device on the bus a different address or they will fight each other. The board already has its own pull-up resistors, so bear that in mind before adding more.</p></div><a class="learn-more" href="/pinout/i2c.html">Open the related interface guide &rarr;</a></div></article>
+				<article class="pin5_gpio3"><h1>GPIO 3 (I2C-MCU0 clock)</h1><div class="pin-facts"><div><strong>Header</strong><span>Physical pin: 5</span></div><div><strong>GPIO numbering</strong><span>3</span></div><div><strong>Default signal</strong><span>I2C-MCU0 SCL</span></div><div><strong>Electrical</strong><span>3.3 V logic</span></div></div><div class="pin-description"><p>This pin is one of the lines of the I2C interface reserved for connecting external devices. Pin 3 is the data line (SDA) and pin 5 is the clock line (SCL). The pull-up resistors required for the I2C bus are already on the board. You can run `ls /dev/i2c-*` to list the I2C buses. The bus number can vary depending on the software image in use.</p><div class="notice notice-warning"><strong>Warning</strong><p>Use only devices that support 3.3 V logic levels. Every device on the I2C bus must have a different address; using the same address on more than one device causes communication conflicts. The pull-up resistors required for the I2C bus are already on the board, so take them into account before adding external pull-up resistors.</p></div><a class="learn-more" href="/pinout/i2c.html">Open the related interface guide &rarr;</a></div></article>
 			</section>
 
 		</main>
@@ -182,7 +182,7 @@
 
 		</footer>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-		<script src='/resources/pinout.js?v=20260916T105106'></script>
-		<script src='/resources/boards.js?v=20260916T105106'></script>
+		<script src='/resources/pinout.js?v=20260916T115258'></script>
+		<script src='/resources/boards.js?v=20260916T115258'></script>
 </body>
 </html>
