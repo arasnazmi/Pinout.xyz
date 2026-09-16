@@ -7,8 +7,8 @@ url: https://docs.t3gemstone.org/tr/boards/o1/peripherals/introduction
 -->
 # 5 V Güç
 
-Physical Pin 2 ve Physical Pin 4, 3,3 V'tan fazlasına ihtiyaç duyan eklentiler için 5 V verir. Sinyal pinlerinin hala yalnızca 3,3 V olduğunu unutmayın: bir kartı 5 V ile beslemek, bir GPIO pinine 5 V geri gönderebileceğiniz anlamına gelmez.
+Physical Pin 2 ve Physical Pin 4, 3,3 V'tan daha yüksek besleme gerilimine ihtiyaç duyan çevre birimleri için 5 V besleme sağlar. Ancak sinyal pinleri yalnızca 3,3 V lojik seviyesini destekler. Bir çevre biriminin 5 V ile beslenebilmesi, bu cihazın GPIO pinlerine 5 V lojik sinyal uygulayabileceği anlamına gelmez.
 
-Bu 5 V, taktığınız kaynaktan doğrudan gelmez; karttaki bir regülatörden üretilir ve kart bu hattı kapatabilir.
+Bu pinlerdeki 5 V besleme, harici güç kaynağından doğrudan sağlanmaz; kart üzerindeki güç regülatörü tarafından üretilir. Güç yönetimi yapılandırmasına bağlı olarak bu besleme hattı devre dışı bırakılabilir.
 
-> **Buradan güç vermeyin:** Bu pinler çıkıştır. Buraya 5 V uygulamak kartın regülatörüne karşı çalışır ve kartın kendi güç girişindeki korumayı atlar; bir şeyleri bozmanın kolay yolu budur.
+> **Buradan güç vermeyin:** Physical Pin 2 ve Physical Pin 4 numaralı pinler 5 V çıkışıdır. Bu pinlere harici 5 V uygulanması, kart üzerindeki güç regülatörüyle çakışmaya ve güç girişindeki koruma devrelerinin devre dışı kalmasına neden olabilir. Bu nedenle kartı bu pinler üzerinden beslemeyin.

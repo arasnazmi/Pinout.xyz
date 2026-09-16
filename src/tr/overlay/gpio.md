@@ -6,10 +6,10 @@ description: T3 Gemstone O1 genel amaçlı 3,3 V GPIO pinleri
 -->
 # GPIO - Genel Amaçlı Giriş/Çıkış
 
-T3-GEM-O1 üzerindeki 40 pin başlık size 3,3 V'luk dijital pinler sunar. Her pin bir girişi okuyabilir, bir çıkışı sürebilir veya seri port, SPI, I2C, ses ve PWM gibi özel bir işleve geçirilebilir.
+T3 Gemstone O1 üzerindeki 40 pinli başlık, 3,3 V lojik seviyesinde çalışan dijital GPIO pinleri sunar. Her pin; dijital giriş olarak okunabilir, dijital çıkış olarak sürülebilir veya UART, SPI, I²C, PCM ve PWM gibi alternatif işlevler için yapılandırılabilir.
 
-Bir pini Linux'tan kontrol etmek için `libgpiod`, pinleri listelemek için `gpioinfo`, okuma ve yazma için `gpioget` ve `gpioset` araçlarını kullanabilirsiniz. Raspberry Pi'nin GPIO kütüphaneleri burada çalışmaz. Pini numarasıyla değil sistem adıyla arayın; numaralar yazılım sürümleri arasında değişebilir.
+GPIO pinlerini Linux üzerinden kontrol etmek için `libgpiod` araçlarını kullanabilirsiniz. GPIO pinlerini listelemek için `gpioinfo`, pin durumunu okumak için `gpioget` ve pin durumunu ayarlamak için `gpioset` komutlarını kullanabilirsiniz. GPIO pinlerini fiziksel pin numarasıyla değil, sistem tarafından tanımlanan GPIO adıyla belirtmelisiniz.
 
-> **3,3 V'ta kalın:** Her pin doğrudan işlemciye bağlıdır, arada koruma sağlayan hiçbir şey yoktur. Herhangi bir pine uygulanan 5 V kartı bozabilir. Pinler güç değil sinyal için tasarlanmıştır: LED, buzzer, röle veya motor çalıştıracaksanız pini tek başına kullanmayın, bir sürücü, transistör ya da röle modülü kullanın.
+> **3,3 V lojik seviyesini kullanın:** GPIO pinleri doğrudan işlemciye bağlıdır ve aralarında herhangi bir koruma devresi bulunmaz. GPIO pinlerine 5 V uygulanması işlemciye ve karta zarar verebilir. GPIO pinleri yalnızca sinyal amaçlı kullanılmalıdır. LED, buzzer, röle veya motor gibi yükleri doğrudan GPIO pinine bağlamayın; bu tür yükler için uygun bir sürücü devresi, transistör veya röle modülü kullanın.
 
-Bazı işlevler ancak ilgili device tree overlay'i `/boot/uEnv.txt` içinde listelendiğinde etkinleşir, o zamana kadar pin düz bir GPIO olarak kalmaktadır.
+Bazı alternatif işlevler, ilgili Device Tree overlay'i `/boot/uEnv.txt` dosyasında etkinleştirildiğinde kullanılabilir. Overlay etkinleştirilmediği sürece ilgili pin GPIO olarak çalışır.

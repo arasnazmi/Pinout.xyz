@@ -6,6 +6,6 @@ description: T3 Gemstone O1 toprak pinleri
 -->
 # Toprak
 
-Fiziksel 6, 9, 14, 20, 25, 30, 34 ve 39 numaralı pinler topraktır. Sekizi de aynı bağlantıdır; hangisini kullandığınız fark etmez. Kabloları kısa ve düzeni anlaşılır tutmak için bağladığınız pine en yakın olanı seçebilirsiniz.
+Fiziksel 6, 9, 14, 20, 25, 30, 34 ve 39 numaralı pinler toprak (GND) bağlantısıdır. Bu pinlerin tamamı kartın ortak toprak hattına bağlıdır; kullanım açısından aralarında işlevsel bir fark bulunmaz. Kablolamayı düzenli ve kısa tutmak için bağlantı noktasına en yakın toprak pinini kullanabilirsiniz.
 
-Kendi güç kaynağı olanlar da dahil, her eklentinin karta geri dönen bir toprak bağlantısına ihtiyacı vardır.
+Harici güç kaynağı kullananlar da dahil olmak üzere, karta bağlanan tüm çevre birimlerinin kart ile ortak bir toprak bağlantısına sahip olması gerekir.

@@ -5,16 +5,22 @@ description: T3 Gemstone O1 I2C-MCU0 ve paylaşımlı I2C-WKUP0 başlık pinleri
 -->
 # I2C
 
-Physical Pin 3 (veri) ve Physical Pin 5 (saat), kendi cihazlarınız için ayrılmış I2C veri yoludur. Kart üzerinde bu hattı kullanan başka bir şey yok, yani hat tamamen size ait. Bir I2C veri yolunun ihtiyaç duyduğu pull-up dirençleri kartta hazır takılıdır; ayrıca direnç eklemeniz gerekmez.
+Physical Pin 3 (veri) ve Physical Pin 5 (saat), harici cihazların kullanımı için ayrılmış I²C veri yolunu oluşturur. Bu veri yoluna kart üzerinde başka bir cihaz bağlı değildir; dolayısıyla harici cihazlar için ayrılmıştır. I²C iletişimi için gerekli pull-up dirençleri kart üzerinde bulunmaktadır ve ek direnç kullanılmasına gerek yoktur.
 
-Farklı yazılım imajları veri yolunu farklı numaralandırır; bu yüzden hat `/dev/i2c-1` veya `/dev/i2c-2` olarak görünebilir. Hangi veri yollarının mevcut olduğunu görmek için `ls /dev/i2c-*`, bağlı cihazları görmek için de o hat üzerinde `i2cdetect` komutunu çalıştırın.
+I²C veri yolu numarası, kullanılan yazılım imajına göre değişiklik gösterebilir. Veri yolu `/dev/i2c-1` veya `/dev/i2c-2` olarak görünebilir. Mevcut I²C veri yollarını listelemek için aşağıdaki komutu kullanın:
 
-> **Bağlamadan önce:** Yalnızca 3,3 V cihaz kullanın. Hattaki her cihaza farklı bir adres verin, aksi halde birbirleriyle çakışırlar. Pull-up direnci ekleyecekseniz kartta zaten mevcut olduğunu unutmayın.
+```bash
+ls /dev/i2c-*
+```
 
-## 27 ve 28 numaralı pinler paylaşımlı bir hat
+Bir veri yolundaki bağlı cihazları ve I²C adreslerini görüntülemek için ilgili veri yolu üzerinde `i2cdetect` komutunu kullanın.
 
-Bu iki pin, çalışan ikinci bir I2C veri yoludur; pull-up dirençleri de ilki gibi kartta takılıdır. Kartın gücünü yöneten çip, gerçek zaman saati ve EEPROM bu hatta bağlıdır.
+> **Bağlantı öncesi:** Yalnızca 3,3 V lojik seviyesini destekleyen cihazlar kullanın. I²C hattındaki her cihazın benzersiz bir adresi olmalıdır; aynı adresin birden fazla cihaz tarafından kullanılması iletişim çakışmasına neden olabilir. Harici pull-up direnci eklemeden önce kart üzerinde mevcut pull-up dirençlerinin bulunduğunu göz önünde bulundurun.
 
-Yani bu pinleri kullanabilirsiniz, sadece paylaşmanız gerekir. Bir cihaz seçmeden önce bu hat üzerinde `i2cdetect` çalıştırıp hangi adreslerin dolu olduğunu görün ve çakışmayan bir adres seçin.
+## 27 ve 28 numaralı pinler paylaşımlı bir I²C hattıdır
 
-> **Burada 3 ve 5 numaralı pinlerden daha dikkatli olun:** Güç yönetim çipi bu hatta olduğu için bir kısa devre, yanlış gerilim ya da hattı kilitleyen bir cihaz yalnızca aksesuarınızı değil kartın tamamını durdurabilir. Hatta halihazırda bulunan cihazların ayarlarını değiştirmeyin. Günlük sensör ve eklentiler için Physical Pin 3 ile Physical Pin 5 daha kolay seçimdir, çünkü o hat tamamen size aittir.
+Physical Pin 27 ve Physical Pin 28 pinleri, kart üzerindeki ikinci I²C veri yoluna aittir. Bu veri yolunda gerekli pull-up dirençleri kart üzerinde bulunmaktadır. Güç yönetim entegresi (PMIC), gerçek zamanlı saat (RTC) ve EEPROM bu veri yoluna dahili olarak bağlıdır.
+
+Bu pinlere harici I²C cihazları bağlayabilirsiniz. Ancak veri yolu mevcut cihazlarla paylaşıldığından, yeni bir cihaz bağlamadan önce i2cdetect komutunu kullanarak veri yolundaki mevcut I²C adreslerini kontrol edin ve çakışma oluşturmayacak benzersiz bir adres kullanın.
+
+> **Dikkat:** Bu I²C hattı, pin 3 ve 5'te bulunan I²C hattına kıyasla daha dikkatli kullanılmalıdır. Güç yönetim entegresinin (PMIC) bu hatta bağlı olması nedeniyle oluşabilecek bir kısa devre, yanlış gerilim uygulanması veya veri yolunun kilitlenmesi, yalnızca bağlı çevre biriminin değil, kartın tamamının çalışmasını etkileyebilir. Veri yolunda hâlihazırda bulunan cihazların yapılandırmasını değiştirmeyin. Genel amaçlı sensör ve çevre birimi bağlantıları için Physical Pin 3 ve Physical Pin 5'te bulunan I²C veri yolunun kullanılması önerilir. Bu veri yolu harici cihazların kullanımına ayrılmıştır.

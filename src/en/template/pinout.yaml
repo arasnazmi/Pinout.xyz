@@ -40,7 +40,7 @@ pins:
   '8':
     name: UART-MAIN1 TX
     description: serial transmit
-    description_tr: seri gönderme
+    description_tr: seri veri gönderme
     type: GPIO/UART
     scheme:
       bcm: 14
@@ -50,14 +50,14 @@ pins:
   '10':
     name: UART-MAIN1 RX
     description: serial receive
-    description_tr: seri alma
+    description_tr: seri veri alma
     type: GPIO/UART
     scheme:
       bcm: 15
   '11':
     name: UART-MAIN1 RTS
     description: serial flow control, RTS
-    description_tr: seri akış kontrolü, RTS
+    description_tr: seri iletişim akış kontrolü, RTS
     type: GPIO/UART
     scheme:
       bcm: 17
@@ -70,8 +70,6 @@ pins:
       bcm: 18
   '13':
     name: ''
-    description: system name GPIO0_33
-    description_tr: sistem adı GPIO0_33
     type: GPIO
     scheme:
       bcm: 27
@@ -80,15 +78,11 @@ pins:
     type: GND
   '15':
     name: ''
-    description: system name GPIO0_41
-    description_tr: sistem adı GPIO0_41
     type: GPIO
     scheme:
       bcm: 22
   '16':
     name: ''
-    description: system name MCU_GPIO0_7
-    description_tr: sistem adı MCU_GPIO0_7
     type: GPIO
     scheme:
       bcm: 23
@@ -97,8 +91,6 @@ pins:
     type: "+3v3"
   '18':
     name: ''
-    description: system name MCU_GPIO0_10
-    description_tr: sistem adı MCU_GPIO0_10
     type: GPIO
     scheme:
       bcm: 24
@@ -121,8 +113,6 @@ pins:
       bcm: 9
   '22':
     name: ''
-    description: system name GPIO0_42
-    description_tr: sistem adı GPIO0_42
     type: GPIO
     scheme:
       bcm: 25
@@ -162,8 +152,8 @@ pins:
       bcm: 1
   '29':
     name: PWM-0A
-    description: hardware PWM
-    description_tr: donanımsal PWM
+    description: PWM
+    description_tr: PWM
     type: GPIO
     scheme:
       bcm: 5
@@ -172,22 +162,22 @@ pins:
     type: GND
   '31':
     name: PWM-1A
-    description: hardware PWM
-    description_tr: donanımsal PWM
+    description: PWM
+    description_tr: PWM
     type: GPIO
     scheme:
       bcm: 6
   '32':
     name: PWM-0B
-    description: hardware PWM
-    description_tr: donanımsal PWM
+    description: PWM
+    description_tr: PWM
     type: GPIO
     scheme:
       bcm: 12
   '33':
     name: PWM-1B
-    description: hardware PWM
-    description_tr: donanımsal PWM
+    description: PWM
+    description_tr: PWM
     type: GPIO
     scheme:
       bcm: 13
@@ -204,21 +194,19 @@ pins:
   '36':
     name: UART-MAIN1 CTS
     description: serial flow control, CTS
-    description_tr: seri akış kontrolü, CTS
+    description_tr: seri veri akış kontrolü, CTS
     type: GPIO/UART
     scheme:
       bcm: 16
   '37':
     name: ''
-    description: system name GPIO0_36
-    description_tr: sistem adı GPIO0_36
     type: GPIO
     scheme:
       bcm: 26
   '38':
     name: PCM-McASP0 DATA0
-    description: audio data, PCM DIN on a Pi
-    description_tr: ses verisi, Pi'de PCM DIN
+    description: audio data
+    description_tr: ses verisi
     type: GPIO/PCM
     scheme:
       bcm: 20
@@ -227,8 +215,8 @@ pins:
     type: GND
   '40':
     name: PCM-McASP0 DATA1
-    description: audio data, PCM DOUT on a Pi
-    description_tr: ses verisi, Pi'de PCM DOUT
+    description: audio data
+    description_tr: ses verisi
     type: GPIO/PCM
     scheme:
       bcm: 21

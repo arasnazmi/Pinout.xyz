@@ -10,10 +10,10 @@ pin:
 -->
 # UART
 
-Physical Pin 8 gönderir, Physical Pin 10 alır. Linux'ta bu seri port `/dev/ttyS3` olarak görünür. Cihazınızın alma pinini Physical Pin 8'e, gönderme pinini Physical Pin 10'a bağlayın ve toprağı ortaklayın.
+Physical Pin 8 veri gönderimi (TX), Physical Pin 10 ise veri alımı (RX) için kullanılır. Linux üzerinde bu seri port /dev/ttyS3 aygıtı olarak görünür. Bağlantı sırasında harici cihazın RX hattını Physical Pin 8'e, TX hattını Physical Pin 10'a bağlayın ve cihaz ile kartın toprak bağlantılarını ortaklayın.
 
-Physical Pin 11 ile Physical Pin 36, ihtiyaç duyan cihazlar için akış kontrolü (RTS ve CTS) ekler. Basit seri cihazların çoğu buna ihtiyaç duymaz; bu iki pini boş bırakabilirsiniz.
+Physical Pin 11 ve Physical Pin 36, akış kontrolü gerektiren cihazlar için sırasıyla RTS ve CTS hatları olarak kullanılabilir. Basit seri haberleşme uygulamalarında bu hatlara genellikle ihtiyaç duyulmaz ve bağlantısız bırakılabilir.
 
-> **Yalnızca 3,3 V:** Bu portu asla bir RS-232 portuna veya 5 V'luk bir seri dönüştürücüye bağlamayın; ikisi de kartı bozar. 3,3 V'luk bir USB-seri dönüştürücü ya da uygun bir RS-232 seviye dönüştürücü kullanın.
+> **Yalnızca 3,3 V lojik seviyesi kullanın:** Bu seri portu RS-232 arayüzüne veya 5 V lojik seviyeli bir seri dönüştürücüye doğrudan bağlamayın. Bu tür bağlantılar karta zarar verebilir. USB-seri bağlantısı için 3,3 V lojik seviyesini destekleyen bir USB-seri dönüştürücü veya uygun bir RS-232 seviye dönüştürücü kullanın.
 
-Kartın üzerindeki üç pinli konnektör, açılış konsolu için kullanılan ayrı bir seri porttur. Bu pinlerle aynı şey değildir.
+Kart üzerindeki üç pinli konnektör, açılış konsolu için ayrılmış farklı bir seri porttur. Bu konnektör, Physical Pin 8, Physical Pin 10, Physical Pin 11 ve Physical Pin 36 üzerindeki seri port ile aynı arayüz değildir.
